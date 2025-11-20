@@ -9,3 +9,7 @@ html {
 * {
   scroll-margin-top: 100px;
 }
+
+body {
+  font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+}
