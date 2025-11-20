@@ -6,6 +6,7 @@ function App() {
   const [displayTab, setDisplayTab] = useState('home');
   const [isFadingOut, setIsFadingOut] = useState(false);
   const [visibleElements, setVisibleElements] = useState<Set<number>>(new Set());
+  const [isLoading, setIsLoading] = useState(true);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   const handleTabChange = (tab: string) => {
@@ -20,6 +21,14 @@ function App() {
       setIsFadingOut(false);
     }, 200);
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2800);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
@@ -60,6 +69,110 @@ function App() {
       }
     };
   }, [displayTab]);
+
+  if (isLoading) {
+    return (
+      <div className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden" style={{ backgroundColor: 'rgb(13, 39, 180)' }}>
+        <div className="relative">
+          <svg width="200" height="200" viewBox="0 0 200 200" className="animate-fade-in">
+            <defs>
+              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style={{ stopColor: 'white', stopOpacity: 1 }} />
+                <stop offset="100%" style={{ stopColor: 'rgba(255,255,255,0.7)', stopOpacity: 1 }} />
+              </linearGradient>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                <feMerge>
+                  <feMergeNode in="coloredBlur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <g className="animate-draw-building">
+              <rect x="70" y="80" width="60" height="90" fill="none" stroke="url(#grad1)" strokeWidth="3" filter="url(#glow)"
+                style={{
+                  strokeDasharray: '300',
+                  strokeDashoffset: '300',
+                  animation: 'draw 1.5s ease-out forwards'
+                }}/>
+
+              <line x1="85" y1="95" x2="95" y2="95" stroke="url(#grad1)" strokeWidth="2"
+                style={{
+                  strokeDasharray: '10',
+                  strokeDashoffset: '10',
+                  animation: 'draw 0.3s ease-out 0.5s forwards'
+                }}/>
+              <line x1="105" y1="95" x2="115" y2="95" stroke="url(#grad1)" strokeWidth="2"
+                style={{
+                  strokeDasharray: '10',
+                  strokeDashoffset: '10',
+                  animation: 'draw 0.3s ease-out 0.6s forwards'
+                }}/>
+
+              <line x1="85" y1="110" x2="95" y2="110" stroke="url(#grad1)" strokeWidth="2"
+                style={{
+                  strokeDasharray: '10',
+                  strokeDashoffset: '10',
+                  animation: 'draw 0.3s ease-out 0.7s forwards'
+                }}/>
+              <line x1="105" y1="110" x2="115" y2="110" stroke="url(#grad1)" strokeWidth="2"
+                style={{
+                  strokeDasharray: '10',
+                  strokeDashoffset: '10',
+                  animation: 'draw 0.3s ease-out 0.8s forwards'
+                }}/>
+
+              <line x1="85" y1="125" x2="95" y2="125" stroke="url(#grad1)" strokeWidth="2"
+                style={{
+                  strokeDasharray: '10',
+                  strokeDashoffset: '10',
+                  animation: 'draw 0.3s ease-out 0.9s forwards'
+                }}/>
+              <line x1="105" y1="125" x2="115" y2="125" stroke="url(#grad1)" strokeWidth="2"
+                style={{
+                  strokeDasharray: '10',
+                  strokeDashoffset: '10',
+                  animation: 'draw 0.3s ease-out 1s forwards'
+                }}/>
+
+              <rect x="85" y="145" width="30" height="25" fill="none" stroke="url(#grad1)" strokeWidth="2"
+                style={{
+                  strokeDasharray: '110',
+                  strokeDashoffset: '110',
+                  animation: 'draw 0.4s ease-out 1.2s forwards'
+                }}/>
+
+              <path d="M 50 80 L 100 50 L 150 80" fill="none" stroke="url(#grad1)" strokeWidth="3" filter="url(#glow)"
+                style={{
+                  strokeDasharray: '150',
+                  strokeDashoffset: '150',
+                  animation: 'draw 0.8s ease-out 1.6s forwards'
+                }}/>
+            </g>
+
+            <circle cx="100" cy="100" r="70" fill="none" stroke="rgba(255,255,255,0.2)" strokeWidth="1"
+              style={{
+                strokeDasharray: '440',
+                strokeDashoffset: '440',
+                animation: 'draw 2s ease-out 0.3s forwards'
+              }}/>
+          </svg>
+
+          <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
+            <p className="text-white text-xl font-normal tracking-wider"
+               style={{
+                 fontFamily: 'Franklin Gothic, Arial, sans-serif',
+                 animation: 'fadeInUp 0.8s ease-out 2s forwards',
+                 opacity: 0
+               }}>
+              Welcome
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white">
