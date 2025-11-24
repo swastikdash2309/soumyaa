@@ -360,58 +360,8 @@ function App() {
                     <h2 className="text-3xl font-black mb-2 relative z-10" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>Elevation Profile</h2>
                     <p className="text-sm text-gray-600 mb-8 relative z-10" style={{ fontFamily: 'Georgia, serif' }}>Guide<br />Ms. Poorna Malavath</p>
 
-                    <div className="relative h-80">
-                      <svg className="w-full h-full" viewBox="0 0 1000 300" preserveAspectRatio="none">
-                        <defs>
-                          <linearGradient id="elevationGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" stopColor="#e5e7eb" stopOpacity="0.8" />
-                            <stop offset="100%" stopColor="#f3f4f6" stopOpacity="0.2" />
-                          </linearGradient>
-                        </defs>
-
-                        <path
-                          d="M 0 220 L 80 190 L 160 185 L 240 160 L 320 140 L 400 135 L 480 115 L 560 105 L 640 95 L 720 85 L 800 105 L 880 155 L 1000 200"
-                          fill="url(#elevationGradient)"
-                          stroke="none"
-                        />
-
-                        <path
-                          d="M 0 220 L 80 190 L 160 185 L 240 160 L 320 140 L 400 135 L 480 115 L 560 105 L 640 95 L 720 85 L 800 105 L 880 155 L 1000 200"
-                          fill="none"
-                          stroke="#1f2937"
-                          strokeWidth="2"
-                        />
-
-                        <circle cx="0" cy="220" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                        <circle cx="80" cy="190" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                        <circle cx="160" cy="185" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                        <circle cx="240" cy="160" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                        <circle cx="320" cy="140" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                        <circle cx="400" cy="135" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                        <circle cx="480" cy="115" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                        <circle cx="560" cy="105" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                        <circle cx="640" cy="95" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                        <circle cx="720" cy="85" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                        <circle cx="880" cy="155" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                        <circle cx="1000" cy="200" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                      </svg>
-
-                      <div className="absolute bottom-0 left-0 right-0 flex justify-between px-4 text-xs text-gray-600" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
-                        <span>Day 1</span>
-                        <span>Day 2</span>
-                        <span>Day 3</span>
-                        <span>Day 4</span>
-                        <span>Day 5</span>
-                        <span>Day 6</span>
-                        <span>Day 7</span>
-                        <span>Day 8</span>
-                        <span>Day 9</span>
-                        <span>Day 10</span>
-                        <span>Day 11</span>
-                        <span>Day 12</span>
-                      </div>
-
-                      <div className="absolute left-0 top-0 bottom-8 flex flex-col justify-between text-xs text-gray-600" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                    <div className="relative h-96 pt-8">
+                      <div className="absolute left-0 top-8 bottom-12 w-12 flex flex-col justify-between text-xs text-gray-600" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
                         <span>6000m</span>
                         <span>5500m</span>
                         <span>5000m</span>
@@ -420,6 +370,58 @@ function App() {
                         <span>3500m</span>
                         <span>3000m</span>
                         <span>2500m</span>
+                      </div>
+
+                      <div className="ml-14 mr-4 h-full relative">
+                        <svg className="w-full h-[calc(100%-2rem)]" viewBox="0 0 1000 250" preserveAspectRatio="none">
+                          <defs>
+                            <linearGradient id="elevationGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                              <stop offset="0%" stopColor="#e5e7eb" stopOpacity="0.8" />
+                              <stop offset="100%" stopColor="#f3f4f6" stopOpacity="0.2" />
+                            </linearGradient>
+                          </defs>
+
+                          <path
+                            d="M 0 180 L 83 155 L 166 152 L 250 130 L 333 110 L 416 105 L 500 85 L 583 75 L 666 65 L 750 55 L 833 75 L 916 125 L 1000 165"
+                            fill="url(#elevationGradient)"
+                            stroke="none"
+                          />
+
+                          <path
+                            d="M 0 180 L 83 155 L 166 152 L 250 130 L 333 110 L 416 105 L 500 85 L 583 75 L 666 65 L 750 55 L 833 75 L 916 125 L 1000 165"
+                            fill="none"
+                            stroke="#1f2937"
+                            strokeWidth="2.5"
+                          />
+
+                          <circle cx="0" cy="180" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="83" cy="155" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="166" cy="152" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="250" cy="130" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="333" cy="110" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="416" cy="105" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="500" cy="85" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="583" cy="75" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="666" cy="65" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="750" cy="55" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="833" cy="75" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="1000" cy="165" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                        </svg>
+
+                        <div className="absolute bottom-0 left-0 right-0 flex justify-between text-xs text-gray-600" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                          <span>Day 1</span>
+                          <span>Day 2</span>
+                          <span>Day 3</span>
+                          <span>Day 4</span>
+                          <span>Day 5</span>
+                          <span>Day 6</span>
+                          <span>Day 7</span>
+                          <span>Day 8</span>
+                          <span>Day 9</span>
+                          <span>Day 10</span>
+                          <span>Day 11</span>
+                          <span>Day 12</span>
+                        </div>
                       </div>
                     </div>
                   </div>
