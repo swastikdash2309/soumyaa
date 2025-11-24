@@ -381,7 +381,7 @@ function App() {
                           <div className="h-px bg-gray-200"></div>
                         </div>
 
-                        <svg className="relative w-full h-full" viewBox="0 0 1200 400" preserveAspectRatio="none" style={{ zIndex: 10 }}>
+                        <svg className="relative w-full h-full" viewBox="0 0 1100 350" preserveAspectRatio="none" style={{ zIndex: 10 }}>
                           <defs>
                             <linearGradient id="elevationGradient" x1="0%" y1="0%" x2="0%" y2="100%">
                               <stop offset="0%" stopColor="#e5e7eb" stopOpacity="0.4" />
@@ -390,13 +390,13 @@ function App() {
                           </defs>
 
                           <path
-                            d="M 0,320 L 100,238 L 200,244 L 300,194 L 400,80 L 500,88 L 600,28 L 700,16 L 800,4 L 900,0 L 1000,112 L 1100,320 L 1100,400 L 0,400 Z"
+                            d="M 0,264.29 L 100,192.86 L 200,200 L 300,167.86 L 400,50 L 500,57.14 L 600,7.14 L 700,0 L 800,-21.43 L 900,-35.71 L 1000,125 L 1100,264.29 L 1100,350 L 0,350 Z"
                             fill="url(#elevationGradient)"
                             stroke="none"
                           />
 
                           <path
-                            d="M 0,320 L 100,238 L 200,244 L 300,194 L 400,80 L 500,88 L 600,28 L 700,16 L 800,4 L 900,0 L 1000,112 L 1100,320"
+                            d="M 0,264.29 L 100,192.86 L 200,200 L 300,167.86 L 400,50 L 500,57.14 L 600,7.14 L 700,0 L 800,-21.43 L 900,-35.71 L 1000,125 L 1100,264.29"
                             fill="none"
                             stroke="#1f2937"
                             strokeWidth="2"
@@ -404,18 +404,18 @@ function App() {
                             strokeLinejoin="round"
                           />
 
-                          <circle cx="0" cy="320" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                          <circle cx="100" cy="238" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                          <circle cx="200" cy="244" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                          <circle cx="300" cy="194" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                          <circle cx="400" cy="80" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                          <circle cx="500" cy="88" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                          <circle cx="600" cy="28" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                          <circle cx="700" cy="16" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                          <circle cx="800" cy="4" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                          <circle cx="900" cy="0" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                          <circle cx="1000" cy="112" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                          <circle cx="1100" cy="320" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="0" cy="264.29" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="100" cy="192.86" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="200" cy="200" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="300" cy="167.86" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="400" cy="50" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="500" cy="57.14" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="600" cy="7.14" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="700" cy="0" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="800" cy="-21.43" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="900" cy="-35.71" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="1000" cy="125" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="1100" cy="264.29" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
                         </svg>
 
                         <div className="absolute bottom-0 left-0 right-0 flex justify-between text-sm text-gray-700" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
