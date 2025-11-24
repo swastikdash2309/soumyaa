@@ -122,19 +122,39 @@ function App() {
           isFadingOut ? 'opacity-0' : 'opacity-100'
         }`}>
         {displayTab === 'intro' && (
-          <div className="bg-white min-h-screen">
-            <div className="max-w-6xl mx-auto px-8 py-20">
+          <div className="bg-white min-h-screen flex items-center justify-center">
+            <div className="max-w-6xl mx-auto px-8 text-center">
               <div
                 data-index="0"
-                className={`text-center mb-20 transition-all duration-700 ${
+                className={`transition-all duration-700 ${
                   visibleElements.has(0) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}>
-                <h1 className="text-7xl md:text-9xl font-black mb-8" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
-                  SD.
-                </h1>
-                <p className="text-2xl md:text-3xl italic text-gray-600 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
-                  Welcome to my portfolio
+                <p className="text-xl md:text-2xl text-gray-500 mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+                  hello, i'm
                 </p>
+                <h1 className="text-7xl md:text-8xl lg:text-9xl font-black mb-12" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                  soumya
+                </h1>
+                <div className="flex gap-6 justify-center">
+                  <a
+                    href="https://www.instagram.com/soumyaad1808/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-black transition-colors duration-200"
+                    aria-label="Instagram"
+                  >
+                    <Instagram size={28} strokeWidth={1.5} />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/soumyaa-dhandharria/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-black transition-colors duration-200"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin size={28} strokeWidth={1.5} />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
