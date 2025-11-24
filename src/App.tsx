@@ -1,6 +1,47 @@
 import { useState, useEffect, useRef } from 'react';
 import { Instagram, Linkedin } from 'lucide-react';
 
+const CountryIcon = ({ country, color }: { country: string; color: string }) => {
+  const icons: { [key: string]: JSX.Element } = {
+    'USA': (
+      <svg viewBox="0 0 100 100" className="w-16 h-16" style={{ opacity: 0.2 }}>
+        <path d="M30,20 L30,50 L40,45 L50,50 L60,45 L70,50 L70,20 Z M20,60 L80,60 L75,80 L25,80 Z" fill={color} />
+      </svg>
+    ),
+    'SWITZERLAND': (
+      <svg viewBox="0 0 100 100" className="w-16 h-16" style={{ opacity: 0.2 }}>
+        <path d="M50,20 L60,40 L80,40 L65,55 L70,75 L50,60 L30,75 L35,55 L20,40 L40,40 Z" fill={color} />
+      </svg>
+    ),
+    'UK': (
+      <svg viewBox="0 0 100 100" className="w-16 h-16" style={{ opacity: 0.2 }}>
+        <rect x="20" y="30" width="60" height="40" rx="5" fill={color} />
+        <path d="M30,35 L70,35 L70,65 L30,65 Z" fill={color} opacity="0.6" />
+      </svg>
+    ),
+    'INDIA': (
+      <svg viewBox="0 0 100 100" className="w-16 h-16" style={{ opacity: 0.2 }}>
+        <path d="M50,15 L35,35 L15,35 L30,50 L25,70 L50,55 L75,70 L70,50 L85,35 L65,35 Z" fill={color} />
+      </svg>
+    ),
+    'SINGAPORE': (
+      <svg viewBox="0 0 100 100" className="w-16 h-16" style={{ opacity: 0.2 }}>
+        <circle cx="50" cy="50" r="25" fill={color} />
+        <path d="M50,30 L55,45 L70,45 L58,55 L62,70 L50,60 L38,70 L42,55 L30,45 L45,45 Z" fill={color} opacity="0.7" />
+      </svg>
+    ),
+    'GLOBAL': (
+      <svg viewBox="0 0 100 100" className="w-16 h-16" style={{ opacity: 0.2 }}>
+        <circle cx="50" cy="50" r="30" fill="none" stroke={color} strokeWidth="4" />
+        <ellipse cx="50" cy="50" rx="30" ry="15" fill="none" stroke={color} strokeWidth="3" />
+        <line x1="50" y1="20" x2="50" y2="80" stroke={color} strokeWidth="3" />
+      </svg>
+    ),
+  };
+
+  return icons[country] || icons['GLOBAL'];
+};
+
 function App() {
   const [activeTab, setActiveTab] = useState('home');
   const [displayTab, setDisplayTab] = useState('home');
@@ -658,14 +699,14 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'ACADEMIC') && (
                   <div
                     data-index="1"
-                    className={`relative rounded-3xl bg-gradient-to-b from-gray-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-amber-50/30 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(1) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
                     <div className="flex items-start justify-between mb-16">
                       <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#D4A574' }}>
                         ACADEMIC
                       </span>
-                      <div className="text-5xl opacity-30" style={{ color: '#D4A574' }}>🗽</div>
+                      <CountryIcon country="USA" color="#D4A574" />
                     </div>
                     <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       S.T. Yau Science Award Finalist
@@ -682,14 +723,14 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'ACADEMIC') && (
                   <div
                     data-index="2"
-                    className={`relative rounded-3xl bg-gradient-to-b from-yellow-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-amber-50/30 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(2) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
                     <div className="flex items-start justify-between mb-16">
                       <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#D4A574' }}>
                         ACADEMIC
                       </span>
-                      <div className="text-5xl opacity-30" style={{ color: '#D4A574' }}>🏔️</div>
+                      <CountryIcon country="SWITZERLAND" color="#D4A574" />
                     </div>
                     <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       CERN Beamline for Schools
@@ -706,14 +747,14 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'INNOVATION') && (
                   <div
                     data-index="3"
-                    className={`relative rounded-3xl bg-gradient-to-b from-blue-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-blue-50/30 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(3) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
                     <div className="flex items-start justify-between mb-16">
                       <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#7B9FD8' }}>
                         INNOVATION
                       </span>
-                      <div className="text-5xl opacity-30" style={{ color: '#7B9FD8' }}>🇬🇧</div>
+                      <CountryIcon country="UK" color="#7B9FD8" />
                     </div>
                     <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       Climate & Sustainability Winner
@@ -730,14 +771,14 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'ACADEMIC') && (
                   <div
                     data-index="4"
-                    className={`relative rounded-3xl bg-gradient-to-b from-yellow-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-amber-50/30 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(4) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
                     <div className="flex items-start justify-between mb-16">
                       <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#D4A574' }}>
                         ACADEMIC
                       </span>
-                      <div className="text-5xl opacity-30" style={{ color: '#D4A574' }}>🇬🇧</div>
+                      <CountryIcon country="UK" color="#D4A574" />
                     </div>
                     <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       John Locke Essay Prize Finalist
@@ -754,14 +795,14 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'ACADEMIC') && (
                   <div
                     data-index="5"
-                    className={`relative rounded-3xl bg-gradient-to-b from-yellow-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-amber-50/30 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(5) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
                     <div className="flex items-start justify-between mb-16">
                       <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#D4A574' }}>
                         ACADEMIC
                       </span>
-                      <div className="text-5xl opacity-30" style={{ color: '#D4A574' }}>🌍</div>
+                      <CountryIcon country="GLOBAL" color="#D4A574" />
                     </div>
                     <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       World Topper - Extended Math
@@ -778,14 +819,14 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'SPORT') && (
                   <div
                     data-index="6"
-                    className={`relative rounded-3xl bg-gradient-to-b from-red-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-red-50/30 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(6) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
                     <div className="flex items-start justify-between mb-16">
                       <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#E89BA0' }}>
                         SPORT
                       </span>
-                      <div className="text-5xl opacity-30" style={{ color: '#E89BA0' }}>🇮🇳</div>
+                      <CountryIcon country="INDIA" color="#E89BA0" />
                     </div>
                     <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       ISSO Nationals Basketball
@@ -802,14 +843,14 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'SPORT') && (
                   <div
                     data-index="7"
-                    className={`relative rounded-3xl bg-gradient-to-b from-red-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-red-50/30 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(7) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
                     <div className="flex items-start justify-between mb-16">
                       <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#E89BA0' }}>
                         SPORT
                       </span>
-                      <div className="text-5xl opacity-30" style={{ color: '#E89BA0' }}>🇮🇳</div>
+                      <CountryIcon country="INDIA" color="#E89BA0" />
                     </div>
                     <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       ISSO Nationals Squash
@@ -826,14 +867,14 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'ACADEMIC') && (
                   <div
                     data-index="8"
-                    className={`relative rounded-3xl bg-gradient-to-b from-yellow-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-amber-50/30 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(8) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
                     <div className="flex items-start justify-between mb-16">
                       <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#D4A574' }}>
                         ACADEMIC
                       </span>
-                      <div className="text-5xl opacity-30" style={{ color: '#D4A574' }}>🌍</div>
+                      <CountryIcon country="GLOBAL" color="#D4A574" />
                     </div>
                     <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       UCMAS Mental Arithmetic
@@ -850,14 +891,14 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'ACADEMIC') && (
                   <div
                     data-index="9"
-                    className={`relative rounded-3xl bg-gradient-to-b from-yellow-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-amber-50/30 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(9) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
                     <div className="flex items-start justify-between mb-16">
                       <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#D4A574' }}>
                         ACADEMIC
                       </span>
-                      <div className="text-5xl opacity-30" style={{ color: '#D4A574' }}>🗽</div>
+                      <CountryIcon country="USA" color="#D4A574" />
                     </div>
                     <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       FISO Math Int'l Olympiad
@@ -874,14 +915,14 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'ACADEMIC') && (
                   <div
                     data-index="10"
-                    className={`relative rounded-3xl bg-gradient-to-b from-yellow-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-amber-50/30 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(10) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
                     <div className="flex items-start justify-between mb-16">
                       <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#D4A574' }}>
                         ACADEMIC
                       </span>
-                      <div className="text-5xl opacity-30" style={{ color: '#D4A574' }}>🇮🇳</div>
+                      <CountryIcon country="INDIA" color="#D4A574" />
                     </div>
                     <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       FISO Math National Olympiad
@@ -898,14 +939,14 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'ACADEMIC') && (
                   <div
                     data-index="11"
-                    className={`relative rounded-3xl bg-gradient-to-b from-yellow-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-amber-50/30 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(11) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
                     <div className="flex items-start justify-between mb-16">
                       <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#D4A574' }}>
                         ACADEMIC
                       </span>
-                      <div className="text-5xl opacity-30" style={{ color: '#D4A574' }}>🌍</div>
+                      <CountryIcon country="GLOBAL" color="#D4A574" />
                     </div>
                     <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       World Math Invitational
@@ -922,14 +963,14 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'ACADEMIC') && (
                   <div
                     data-index="12"
-                    className={`relative rounded-3xl bg-gradient-to-b from-yellow-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-amber-50/30 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(12) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
                     <div className="flex items-start justify-between mb-16">
                       <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#D4A574' }}>
                         ACADEMIC
                       </span>
-                      <div className="text-5xl opacity-30" style={{ color: '#D4A574' }}>🇸🇬</div>
+                      <CountryIcon country="SINGAPORE" color="#D4A574" />
                     </div>
                     <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       Singapore & Asian Math Olympiad
@@ -946,14 +987,14 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'INNOVATION') && (
                   <div
                     data-index="13"
-                    className={`relative rounded-3xl bg-gradient-to-b from-blue-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-blue-50/30 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(13) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
                     <div className="flex items-start justify-between mb-16">
                       <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#7B9FD8' }}>
                         INNOVATION
                       </span>
-                      <div className="text-5xl opacity-30" style={{ color: '#7B9FD8' }}>🇮🇳</div>
+                      <CountryIcon country="INDIA" color="#7B9FD8" />
                     </div>
                     <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       Sparkle, IIT Guwahati
@@ -970,14 +1011,14 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'ACADEMIC') && (
                   <div
                     data-index="14"
-                    className={`relative rounded-3xl bg-gradient-to-b from-yellow-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-amber-50/30 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(14) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
                     <div className="flex items-start justify-between mb-16">
                       <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#D4A574' }}>
                         ACADEMIC
                       </span>
-                      <div className="text-5xl opacity-30" style={{ color: '#D4A574' }}>🌍</div>
+                      <CountryIcon country="GLOBAL" color="#D4A574" />
                     </div>
                     <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       Int'l Business Olympiad
@@ -994,14 +1035,14 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'SPORT') && (
                   <div
                     data-index="15"
-                    className={`relative rounded-3xl bg-gradient-to-b from-red-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-red-50/30 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(15) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
                     <div className="flex items-start justify-between mb-16">
                       <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#E89BA0' }}>
                         SPORT
                       </span>
-                      <div className="text-5xl opacity-30" style={{ color: '#E89BA0' }}>🇮🇳</div>
+                      <CountryIcon country="INDIA" color="#E89BA0" />
                     </div>
                     <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       Tuffman 10km Marathon
