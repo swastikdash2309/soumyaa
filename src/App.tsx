@@ -658,20 +658,22 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'ACADEMIC') && (
                   <div
                     data-index="1"
-                    className={`rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-gray-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(1) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
-                    <div className="flex items-start justify-between mb-4">
-                      <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-bold tracking-wide">ACADEMIC</span>
-                      <div className="text-3xl">📚</div>
+                    <div className="flex items-start justify-between mb-16">
+                      <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#D4A574' }}>
+                        ACADEMIC
+                      </span>
+                      <div className="text-5xl opacity-30" style={{ color: '#D4A574' }}>🗽</div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       S.T. Yau Science Award Finalist
                     </h3>
-                    <p className="text-sm text-gray-600 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+                    <p className="text-sm text-gray-500 mb-20" style={{ fontFamily: 'Georgia, serif' }}>
                       Finalist in Mathematics Category.
                     </p>
-                    <p className="text-xs text-gray-400 uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                    <p className="text-xs text-gray-300 uppercase tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
                       UNITED STATES OF AMERICA
                     </p>
                   </div>
@@ -680,20 +682,22 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'ACADEMIC') && (
                   <div
                     data-index="2"
-                    className={`rounded-3xl bg-gradient-to-br from-yellow-50 to-amber-50 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] border-2 border-gray-200 ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-yellow-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(2) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
-                    <div className="flex items-start justify-between mb-4">
-                      <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-bold tracking-wide">ACADEMIC</span>
-                      <div className="text-3xl">☁️</div>
+                    <div className="flex items-start justify-between mb-16">
+                      <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#D4A574' }}>
+                        ACADEMIC
+                      </span>
+                      <div className="text-5xl opacity-30" style={{ color: '#D4A574' }}>🏔️</div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       CERN Beamline for Schools
                     </h3>
-                    <p className="text-sm text-gray-600 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+                    <p className="text-sm text-gray-500 mb-20" style={{ fontFamily: 'Georgia, serif' }}>
                       Top 50 teams globally.
                     </p>
-                    <p className="text-xs text-gray-400 uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                    <p className="text-xs text-gray-300 uppercase tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
                       SWITZERLAND
                     </p>
                   </div>
@@ -702,20 +706,22 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'INNOVATION') && (
                   <div
                     data-index="3"
-                    className={`rounded-3xl bg-gradient-to-br from-blue-50 to-indigo-50 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-blue-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(3) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
-                    <div className="flex items-start justify-between mb-4">
-                      <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-bold tracking-wide">INNOVATION</span>
-                      <div className="text-3xl">🌍</div>
+                    <div className="flex items-start justify-between mb-16">
+                      <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#7B9FD8' }}>
+                        INNOVATION
+                      </span>
+                      <div className="text-5xl opacity-30" style={{ color: '#7B9FD8' }}>🇬🇧</div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       Climate & Sustainability Winner
                     </h3>
-                    <p className="text-sm text-gray-600 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+                    <p className="text-sm text-gray-500 mb-20" style={{ fontFamily: 'Georgia, serif' }}>
                       Global Social Leaders Festival 2025 (Senior Track).
                     </p>
-                    <p className="text-xs text-gray-400 uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                    <p className="text-xs text-gray-300 uppercase tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
                       UNITED KINGDOM
                     </p>
                   </div>
@@ -724,20 +730,22 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'ACADEMIC') && (
                   <div
                     data-index="4"
-                    className={`rounded-3xl bg-gradient-to-br from-yellow-50 to-orange-50 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-yellow-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(4) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
-                    <div className="flex items-start justify-between mb-4">
-                      <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-bold tracking-wide">ACADEMIC</span>
-                      <div className="text-3xl">✨</div>
+                    <div className="flex items-start justify-between mb-16">
+                      <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#D4A574' }}>
+                        ACADEMIC
+                      </span>
+                      <div className="text-5xl opacity-30" style={{ color: '#D4A574' }}>🇬🇧</div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       John Locke Essay Prize Finalist
                     </h3>
-                    <p className="text-sm text-gray-600 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+                    <p className="text-sm text-gray-500 mb-20" style={{ fontFamily: 'Georgia, serif' }}>
                       Theology category finalist.
                     </p>
-                    <p className="text-xs text-gray-400 uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                    <p className="text-xs text-gray-300 uppercase tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
                       UNITED KINGDOM
                     </p>
                   </div>
@@ -746,20 +754,22 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'ACADEMIC') && (
                   <div
                     data-index="5"
-                    className={`rounded-3xl bg-gradient-to-br from-yellow-50 to-amber-50 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-yellow-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(5) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
-                    <div className="flex items-start justify-between mb-4">
-                      <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-bold tracking-wide">ACADEMIC</span>
-                      <div className="text-3xl">⭕</div>
+                    <div className="flex items-start justify-between mb-16">
+                      <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#D4A574' }}>
+                        ACADEMIC
+                      </span>
+                      <div className="text-5xl opacity-30" style={{ color: '#D4A574' }}>🌍</div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       World Topper - Extended Math
                     </h3>
-                    <p className="text-sm text-gray-600 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+                    <p className="text-sm text-gray-500 mb-20" style={{ fontFamily: 'Georgia, serif' }}>
                       IGCSE Outstanding Learner Award.
                     </p>
-                    <p className="text-xs text-gray-400 uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                    <p className="text-xs text-gray-300 uppercase tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
                       GLOBAL
                     </p>
                   </div>
@@ -768,20 +778,22 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'SPORT') && (
                   <div
                     data-index="6"
-                    className={`rounded-3xl bg-gradient-to-br from-red-50 to-pink-50 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-red-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(6) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
-                    <div className="flex items-start justify-between mb-4">
-                      <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-bold tracking-wide">SPORT</span>
-                      <div className="text-3xl">🏀</div>
+                    <div className="flex items-start justify-between mb-16">
+                      <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#E89BA0' }}>
+                        SPORT
+                      </span>
+                      <div className="text-5xl opacity-30" style={{ color: '#E89BA0' }}>🇮🇳</div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       ISSO Nationals Basketball
                     </h3>
-                    <p className="text-sm text-gray-600 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+                    <p className="text-sm text-gray-500 mb-20" style={{ fontFamily: 'Georgia, serif' }}>
                       U14 & U17 Champions.
                     </p>
-                    <p className="text-xs text-gray-400 uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                    <p className="text-xs text-gray-300 uppercase tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
                       INDIA
                     </p>
                   </div>
@@ -790,20 +802,22 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'SPORT') && (
                   <div
                     data-index="7"
-                    className={`rounded-3xl bg-gradient-to-br from-red-50 to-pink-50 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-red-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(7) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
-                    <div className="flex items-start justify-between mb-4">
-                      <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-bold tracking-wide">SPORT</span>
-                      <div className="text-3xl">🎾</div>
+                    <div className="flex items-start justify-between mb-16">
+                      <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#E89BA0' }}>
+                        SPORT
+                      </span>
+                      <div className="text-5xl opacity-30" style={{ color: '#E89BA0' }}>🇮🇳</div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       ISSO Nationals Squash
                     </h3>
-                    <p className="text-sm text-gray-600 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+                    <p className="text-sm text-gray-500 mb-20" style={{ fontFamily: 'Georgia, serif' }}>
                       U17 Runner up.
                     </p>
-                    <p className="text-xs text-gray-400 uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                    <p className="text-xs text-gray-300 uppercase tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
                       INDIA
                     </p>
                   </div>
@@ -812,20 +826,22 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'ACADEMIC') && (
                   <div
                     data-index="8"
-                    className={`rounded-3xl bg-gradient-to-br from-yellow-50 to-amber-50 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-yellow-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(8) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
-                    <div className="flex items-start justify-between mb-4">
-                      <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-bold tracking-wide">ACADEMIC</span>
-                      <div className="text-3xl">⭕</div>
+                    <div className="flex items-start justify-between mb-16">
+                      <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#D4A574' }}>
+                        ACADEMIC
+                      </span>
+                      <div className="text-5xl opacity-30" style={{ color: '#D4A574' }}>🌍</div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       UCMAS Mental Arithmetic
                     </h3>
-                    <p className="text-sm text-gray-600 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+                    <p className="text-sm text-gray-500 mb-20" style={{ fontFamily: 'Georgia, serif' }}>
                       3rd Runner Up globally at age 7.
                     </p>
-                    <p className="text-xs text-gray-400 uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                    <p className="text-xs text-gray-300 uppercase tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
                       GLOBAL
                     </p>
                   </div>
@@ -834,20 +850,22 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'ACADEMIC') && (
                   <div
                     data-index="9"
-                    className={`rounded-3xl bg-gradient-to-br from-yellow-50 to-orange-50 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-yellow-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(9) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
-                    <div className="flex items-start justify-between mb-4">
-                      <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-bold tracking-wide">ACADEMIC</span>
-                      <div className="text-3xl">🌟</div>
+                    <div className="flex items-start justify-between mb-16">
+                      <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#D4A574' }}>
+                        ACADEMIC
+                      </span>
+                      <div className="text-5xl opacity-30" style={{ color: '#D4A574' }}>🗽</div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       FISO Math Int'l Olympiad
                     </h3>
-                    <p className="text-sm text-gray-600 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+                    <p className="text-sm text-gray-500 mb-20" style={{ fontFamily: 'Georgia, serif' }}>
                       Silver Medalist.
                     </p>
-                    <p className="text-xs text-gray-400 uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                    <p className="text-xs text-gray-300 uppercase tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
                       UNITED STATES OF AMERICA
                     </p>
                   </div>
@@ -856,20 +874,22 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'ACADEMIC') && (
                   <div
                     data-index="10"
-                    className={`rounded-3xl bg-gradient-to-br from-yellow-50 to-amber-50 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-yellow-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(10) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
-                    <div className="flex items-start justify-between mb-4">
-                      <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-bold tracking-wide">ACADEMIC</span>
-                      <div className="text-3xl">✨</div>
+                    <div className="flex items-start justify-between mb-16">
+                      <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#D4A574' }}>
+                        ACADEMIC
+                      </span>
+                      <div className="text-5xl opacity-30" style={{ color: '#D4A574' }}>🇮🇳</div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       FISO Math National Olympiad
                     </h3>
-                    <p className="text-sm text-gray-600 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+                    <p className="text-sm text-gray-500 mb-20" style={{ fontFamily: 'Georgia, serif' }}>
                       Gold Medalist.
                     </p>
-                    <p className="text-xs text-gray-400 uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                    <p className="text-xs text-gray-300 uppercase tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
                       INDIA
                     </p>
                   </div>
@@ -878,20 +898,22 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'ACADEMIC') && (
                   <div
                     data-index="11"
-                    className={`rounded-3xl bg-gradient-to-br from-yellow-50 to-amber-50 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-yellow-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(11) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
-                    <div className="flex items-start justify-between mb-4">
-                      <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-bold tracking-wide">ACADEMIC</span>
-                      <div className="text-3xl">⭕</div>
+                    <div className="flex items-start justify-between mb-16">
+                      <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#D4A574' }}>
+                        ACADEMIC
+                      </span>
+                      <div className="text-5xl opacity-30" style={{ color: '#D4A574' }}>🌍</div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       World Math Invitational
                     </h3>
-                    <p className="text-sm text-gray-600 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+                    <p className="text-sm text-gray-500 mb-20" style={{ fontFamily: 'Georgia, serif' }}>
                       Bronze Medalist.
                     </p>
-                    <p className="text-xs text-gray-400 uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                    <p className="text-xs text-gray-300 uppercase tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
                       GLOBAL
                     </p>
                   </div>
@@ -900,20 +922,22 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'ACADEMIC') && (
                   <div
                     data-index="12"
-                    className={`rounded-3xl bg-gradient-to-br from-yellow-50 to-orange-50 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-yellow-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(12) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
-                    <div className="flex items-start justify-between mb-4">
-                      <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-bold tracking-wide">ACADEMIC</span>
-                      <div className="text-3xl">🏆</div>
+                    <div className="flex items-start justify-between mb-16">
+                      <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#D4A574' }}>
+                        ACADEMIC
+                      </span>
+                      <div className="text-5xl opacity-30" style={{ color: '#D4A574' }}>🇸🇬</div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       Singapore & Asian Math Olympiad
                     </h3>
-                    <p className="text-sm text-gray-600 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+                    <p className="text-sm text-gray-500 mb-20" style={{ fontFamily: 'Georgia, serif' }}>
                       Bronze Medalist.
                     </p>
-                    <p className="text-xs text-gray-400 uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                    <p className="text-xs text-gray-300 uppercase tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
                       SINGAPORE
                     </p>
                   </div>
@@ -922,20 +946,22 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'INNOVATION') && (
                   <div
                     data-index="13"
-                    className={`rounded-3xl bg-gradient-to-br from-blue-50 to-indigo-100 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-blue-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(13) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
-                    <div className="flex items-start justify-between mb-4">
-                      <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-bold tracking-wide">INNOVATION</span>
-                      <div className="text-3xl">💫</div>
+                    <div className="flex items-start justify-between mb-16">
+                      <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#7B9FD8' }}>
+                        INNOVATION
+                      </span>
+                      <div className="text-5xl opacity-30" style={{ color: '#7B9FD8' }}>🇮🇳</div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       Sparkle, IIT Guwahati
                     </h3>
-                    <p className="text-sm text-gray-600 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+                    <p className="text-sm text-gray-500 mb-20" style={{ fontFamily: 'Georgia, serif' }}>
                       Top 6 out of 10,000+ participants.
                     </p>
-                    <p className="text-xs text-gray-400 uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                    <p className="text-xs text-gray-300 uppercase tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
                       INDIA
                     </p>
                   </div>
@@ -944,20 +970,22 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'ACADEMIC') && (
                   <div
                     data-index="14"
-                    className={`rounded-3xl bg-gradient-to-br from-yellow-50 to-amber-50 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-yellow-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(14) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
-                    <div className="flex items-start justify-between mb-4">
-                      <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-bold tracking-wide">ACADEMIC</span>
-                      <div className="text-3xl">⭕</div>
+                    <div className="flex items-start justify-between mb-16">
+                      <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#D4A574' }}>
+                        ACADEMIC
+                      </span>
+                      <div className="text-5xl opacity-30" style={{ color: '#D4A574' }}>🌍</div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       Int'l Business Olympiad
                     </h3>
-                    <p className="text-sm text-gray-600 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+                    <p className="text-sm text-gray-500 mb-20" style={{ fontFamily: 'Georgia, serif' }}>
                       Highest Distinction (282/300).
                     </p>
-                    <p className="text-xs text-gray-400 uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                    <p className="text-xs text-gray-300 uppercase tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
                       GLOBAL
                     </p>
                   </div>
@@ -966,20 +994,22 @@ function App() {
                 {(awardFilter === 'ALL' || awardFilter === 'SPORT') && (
                   <div
                     data-index="15"
-                    className={`rounded-3xl bg-gradient-to-br from-red-50 to-pink-50 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] ${
+                    className={`relative rounded-3xl bg-gradient-to-b from-red-50 via-white to-white p-10 shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] overflow-hidden ${
                       visibleElements.has(15) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
-                    <div className="flex items-start justify-between mb-4">
-                      <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-bold tracking-wide">SPORT</span>
-                      <div className="text-3xl">🏃</div>
+                    <div className="flex items-start justify-between mb-16">
+                      <span className="text-xs font-bold tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#E89BA0' }}>
+                        SPORT
+                      </span>
+                      <div className="text-5xl opacity-30" style={{ color: '#E89BA0' }}>🇮🇳</div>
                     </div>
-                    <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    <h3 className="text-3xl font-bold mb-4 leading-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                       Tuffman 10km Marathon
                     </h3>
-                    <p className="text-sm text-gray-600 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+                    <p className="text-sm text-gray-500 mb-20" style={{ fontFamily: 'Georgia, serif' }}>
                       Bronze medalist.
                     </p>
-                    <p className="text-xs text-gray-400 uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                    <p className="text-xs text-gray-300 uppercase tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
                       INDIA
                     </p>
                   </div>
