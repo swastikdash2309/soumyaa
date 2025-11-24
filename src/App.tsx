@@ -442,135 +442,198 @@ function App() {
         )}
 
         {displayTab === 'academics' && (
-          <div>
-            <div className="bg-cover bg-center py-48 mb-0 relative" style={{ backgroundColor: 'rgb(13, 39, 180)' }}>
-              <h2
+          <div className="bg-white min-h-screen">
+            <div className="max-w-6xl mx-auto px-8 py-20">
+              <div
                 data-index="0"
-                className={`text-6xl md:text-7xl font-normal text-white text-center transition-all duration-700 ${
+                className={`text-center mb-16 transition-all duration-700 ${
                   visibleElements.has(0) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}
-                style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>Academic Plans and Interests</h2>
-              <p className="text-xl md:text-2xl text-white/90 text-center mt-4 italic" style={{ fontFamily: 'Georgia, serif' }}>Proof I read things other than memes</p>
-            </div>
-            <div className="bg-white py-20">
-              <div className="max-w-5xl mx-auto px-12">
-                <div className="space-y-12">
-                  <div
-                    data-index="1"
-                    className={`transition-all duration-500 ${
-                      visibleElements.has(1) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}>
-                    <p className="text-base leading-relaxed mb-4" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                      I intend to pursue Finance, then I want to end up doing Law. I also want to be a Professor for a while and also a Professional Triathlete. I know, it's all over the place.
-                    </p>
-                    <p className="text-base leading-relaxed mb-4" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                      I dive into Finance and Markets with curiosity — from books to simulations — constantly testing how numbers shape real lives. I try to turn that understanding into ideas that help people make smarter financial choices. I'm fascinated by how Economics and Technology intersect; moments when a concept clicks in class feel like tiny market rallies in my mind. And yes, spreadsheets feel like playgrounds.
-                    </p>
-                    <p className="text-base leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                      My dream is to steer capital toward solutions that build stability, expand opportunity, and make our world more sustainable — where profit and purpose compound together.
-                    </p>
-                  </div>
+                }`}>
+                <h1 className="text-7xl md:text-8xl font-bold mb-6" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                  ACADEMICS
+                </h1>
+                <div className="w-16 h-1 mx-auto mb-6" style={{ backgroundColor: 'rgb(13, 39, 180)' }}></div>
+                <p className="text-xl" style={{ fontFamily: 'Georgia, serif', color: '#666' }}>
+                  Proof I read things other than memes
+                </p>
+              </div>
 
-                  <div
-                    data-index="2"
-                    className={`transition-all duration-500 ${
-                      visibleElements.has(2) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}>
-                    <h3 className="text-2xl font-normal mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: 'rgb(13, 39, 180)' }}>IGCSE</h3>
-                    <div className="grid grid-cols-2 gap-x-16 gap-y-2 text-sm" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                      <div className="flex gap-2">
-                        <span>-</span>
-                        <p>English Language - A*</p>
-                      </div>
-                      <div className="flex gap-2">
-                        <span>-</span>
-                        <p>Additional Math - A*</p>
-                      </div>
-                      <div className="flex gap-2">
-                        <span>-</span>
-                        <p>Extended Math - A*</p>
-                      </div>
-                      <div className="flex gap-2">
-                        <span>-</span>
-                        <p>International Math - A*</p>
-                      </div>
-                      <div className="flex gap-2">
-                        <span>-</span>
-                        <p>Chemistry - A*</p>
-                      </div>
-                      <div className="flex gap-2">
-                        <span>-</span>
-                        <p>Physics - A*</p>
-                      </div>
-                      <div className="flex gap-2">
-                        <span>-</span>
-                        <p>Economics - A*</p>
-                      </div>
-                      <div className="flex gap-2">
-                        <span>-</span>
-                        <p>Global Perspectives - A*</p>
-                      </div>
-                      <div className="flex gap-2">
-                        <span>-</span>
-                        <p>English Literature - A</p>
-                      </div>
-                      <div className="flex gap-2">
-                        <span>-</span>
-                        <p>French - A</p>
-                      </div>
+              <div
+                data-index="1"
+                className={`max-w-4xl mx-auto mb-20 transition-all duration-500 ${
+                  visibleElements.has(1) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}>
+                <p className="text-lg leading-relaxed mb-6 text-center" style={{ fontFamily: 'Georgia, serif', color: '#666' }}>
+                  I intend to pursue Finance, then I want to end up doing Law. I also want to be a Professor for a while and also a Professional Triathlete. I know, it's all over the place.
+                </p>
+                <p className="text-lg leading-relaxed mb-6 text-center" style={{ fontFamily: 'Georgia, serif', color: '#666' }}>
+                  I dive into Finance and Markets with curiosity — from books to simulations — constantly testing how numbers shape real lives. I try to turn that understanding into ideas that help people make smarter financial choices. I'm fascinated by how Economics and Technology intersect; moments when a concept clicks in class feel like tiny market rallies in my mind. And yes, spreadsheets feel like playgrounds.
+                </p>
+                <p className="text-lg leading-relaxed text-center" style={{ fontFamily: 'Georgia, serif', color: '#666' }}>
+                  My dream is to steer capital toward solutions that build stability, expand opportunity, and make our world more sustainable — where profit and purpose compound together.
+                </p>
+              </div>
+
+              <div
+                data-index="2"
+                className={`mb-16 transition-all duration-500 ${
+                  visibleElements.has(2) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}>
+                <div className="mb-12">
+                  <h2 className="text-4xl font-bold mb-8" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    IBDP
+                  </h2>
+                  <div className="w-16 h-1 mb-8" style={{ backgroundColor: 'rgb(13, 39, 180)' }}></div>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-6 mb-8">
+                  <div className="border-2 border-gray-200 rounded-xl p-6 bg-white shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex justify-between items-center">
+                      <h3 className="text-xl font-bold" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>Physics</h3>
+                      <span className="px-4 py-1 bg-gray-100 rounded-full text-sm font-semibold" style={{ color: '#666' }}>HL</span>
                     </div>
                   </div>
-
-                  <div
-                    data-index="3"
-                    className={`transition-all duration-500 ${
-                      visibleElements.has(3) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}>
-                    <h3 className="text-2xl font-normal mb-2" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: 'rgb(13, 39, 180)' }}>International Baccalaureate</h3>
-                    <p className="text-sm italic mb-6" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>Irregular Diploma for an Irregular Child</p>
-                    <div className="space-y-2 text-sm" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                      <div className="flex gap-3">
-                        <span>-</span>
-                        <p>Physics HL</p>
-                      </div>
-                      <div className="flex gap-3">
-                        <span>-</span>
-                        <p>Chemistry HL</p>
-                      </div>
-                      <div className="flex gap-3">
-                        <span>-</span>
-                        <p>Math AAHL</p>
-                      </div>
-                      <div className="flex gap-3">
-                        <span>-</span>
-                        <p>Economics - HL</p>
-                      </div>
-                      <div className="flex gap-3">
-                        <span>-</span>
-                        <p>Hindi - BSL</p>
-                      </div>
-                      <div className="flex gap-3">
-                        <span>-</span>
-                        <p>English - SL</p>
-                      </div>
+                  <div className="border-2 border-gray-200 rounded-xl p-6 bg-white shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex justify-between items-center">
+                      <h3 className="text-xl font-bold" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>Chemistry</h3>
+                      <span className="px-4 py-1 bg-gray-100 rounded-full text-sm font-semibold" style={{ color: '#666' }}>HL</span>
                     </div>
                   </div>
+                  <div className="border-2 border-gray-200 rounded-xl p-6 bg-white shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex justify-between items-center">
+                      <h3 className="text-xl font-bold" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>Math AA</h3>
+                      <span className="px-4 py-1 bg-gray-100 rounded-full text-sm font-semibold" style={{ color: '#666' }}>HL</span>
+                    </div>
+                  </div>
+                </div>
 
-                  <div
-                    data-index="4"
-                    className={`transition-all duration-500 ${
-                      visibleElements.has(4) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}>
-                    <h3 className="text-2xl font-normal mb-2" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: 'rgb(13, 39, 180)' }}>Testing</h3>
-                    <p className="text-sm italic mb-6" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>Almost cracked under pressure</p>
-                    <div className="space-y-4 text-sm" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                      <div>
-                        <p className="font-semibold mb-2">SAT - 1540/1600</p>
-                        <div className="ml-6 space-y-1">
-                          <p>Evidence Based Reading & Writing - 740</p>
-                          <p>Mathematics - 800</p>
-                        </div>
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="border-2 border-gray-200 rounded-xl p-6 bg-white shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex justify-between items-center">
+                      <h3 className="text-xl font-bold" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>Economics</h3>
+                      <span className="px-4 py-1 bg-gray-100 rounded-full text-sm font-semibold" style={{ color: '#666' }}>HL</span>
+                    </div>
+                  </div>
+                  <div className="border-2 border-gray-200 rounded-xl p-6 bg-white shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex justify-between items-center">
+                      <h3 className="text-xl font-bold" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>English</h3>
+                      <span className="px-4 py-1 bg-gray-100 rounded-full text-sm font-semibold" style={{ color: '#666' }}>SL</span>
+                    </div>
+                  </div>
+                  <div className="border-2 border-gray-200 rounded-xl p-6 bg-white shadow-sm hover:shadow-md transition-shadow">
+                    <div className="flex justify-between items-center">
+                      <h3 className="text-xl font-bold" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>Hindi B</h3>
+                      <span className="px-4 py-1 bg-gray-100 rounded-full text-sm font-semibold" style={{ color: '#666' }}>SL</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                data-index="3"
+                className={`mb-16 transition-all duration-500 ${
+                  visibleElements.has(3) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}>
+                <div className="flex items-center justify-between mb-8">
+                  <div>
+                    <h2 className="text-4xl font-bold" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                      IGCSE
+                    </h2>
+                    <div className="w-16 h-1 mt-4" style={{ backgroundColor: 'rgb(13, 39, 180)' }}></div>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-5xl font-bold" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>96.8%</p>
+                  </div>
+                </div>
+
+                <div className="border-2 rounded-xl p-8 mb-8 shadow-sm" style={{ borderColor: 'rgb(13, 39, 180)' }}>
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-12 h-12 rounded-full flex items-center justify-center text-2xl" style={{ backgroundColor: 'rgb(13, 39, 180)' }}>
+                      🌍
+                    </div>
+                    <div className="flex-1">
+                      <div className="inline-block px-3 py-1 bg-black text-white text-xs font-bold rounded mb-2">
+                        OUTSTANDING LEARNERS AWARD
                       </div>
+                      <h3 className="text-2xl font-bold" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                        World Topper in Extended Math
+                      </h3>
+                      <p className="text-sm" style={{ fontFamily: 'Georgia, serif', color: '#666' }}>
+                        Achieved the Highest mark globally.
+                      </p>
+                    </div>
+                    <div className="text-6xl font-bold" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                      A*
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                  <div className="bg-gray-50 rounded-lg p-6 text-center">
+                    <p className="text-4xl font-bold mb-2" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>99%</p>
+                    <p className="text-xs uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#666' }}>ADDL MATH</p>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-6 text-center">
+                    <p className="text-4xl font-bold mb-2" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>A*</p>
+                    <p className="text-xs uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#666' }}>PHYSICS</p>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-6 text-center">
+                    <p className="text-4xl font-bold mb-2" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>A*</p>
+                    <p className="text-xs uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#666' }}>CHEMISTRY</p>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-6 text-center">
+                    <p className="text-4xl font-bold mb-2" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>A*</p>
+                    <p className="text-xs uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#666' }}>ECONOMICS</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="bg-gray-50 rounded-lg p-6 text-center">
+                    <p className="text-4xl font-bold mb-2" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>A*</p>
+                    <p className="text-xs uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#666' }}>GLOBAL PERSPECTIVES</p>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-6 text-center">
+                    <p className="text-4xl font-bold mb-2" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>A*</p>
+                    <p className="text-xs uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#666' }}>ENGLISH LANG</p>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-6 text-center">
+                    <p className="text-4xl font-bold mb-2" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>A*</p>
+                    <p className="text-xs uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#666' }}>INTL MATH</p>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-6 text-center">
+                    <p className="text-4xl font-bold mb-2" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>A</p>
+                    <p className="text-xs uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#666' }}>FRENCH</p>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-6 text-center">
+                    <p className="text-4xl font-bold mb-2" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>A</p>
+                    <p className="text-xs uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#666' }}>ENGLISH LIT</p>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                data-index="4"
+                className={`transition-all duration-500 ${
+                  visibleElements.has(4) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}>
+                <h2 className="text-4xl font-bold mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                  SAT
+                </h2>
+                <div className="w-16 h-1 mb-8" style={{ backgroundColor: 'rgb(13, 39, 180)' }}></div>
+
+                <div className="bg-black rounded-2xl p-12 text-white">
+                  <div className="grid md:grid-cols-3 gap-8 text-center">
+                    <div>
+                      <p className="text-6xl font-bold mb-2" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>1540</p>
+                      <p className="text-sm uppercase tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#999' }}>TOTAL SCORE</p>
+                    </div>
+                    <div className="border-l border-r border-gray-700">
+                      <p className="text-6xl font-bold mb-2" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>800</p>
+                      <p className="text-sm uppercase tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#999' }}>MATH</p>
+                    </div>
+                    <div>
+                      <p className="text-6xl font-bold mb-2" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>740</p>
+                      <p className="text-sm uppercase tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#999' }}>ENGLISH R&W</p>
                     </div>
                   </div>
                 </div>
