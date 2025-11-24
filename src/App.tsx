@@ -7,6 +7,7 @@ function App() {
   const [isFadingOut, setIsFadingOut] = useState(false);
   const [visibleElements, setVisibleElements] = useState<Set<number>>(new Set());
   const [isLoading, setIsLoading] = useState(true);
+  const [awardFilter, setAwardFilter] = useState('ALL');
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   const handleTabChange = (tab: string) => {
@@ -176,45 +177,52 @@ function App() {
 
   return (
     <div className="min-h-screen bg-white">
-      <header className="fixed top-0 left-0 right-0 z-50" style={{ backgroundColor: 'rgb(13, 39, 180)' }}>
-        <nav className="max-w-7xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-center">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-100">
+        <nav className="max-w-7xl mx-auto px-8 py-5">
+          <div className="flex items-center justify-between">
+            <button
+              onClick={() => handleTabChange('home')}
+              className="text-2xl font-bold"
+              style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}
+            >
+              SD.
+            </button>
             <div className="flex gap-12">
               <button
-                onClick={() => handleTabChange('home')}
-                className={`text-base font-normal tracking-wide transition-colors duration-200 hover:text-white ${
-                  activeTab === 'home' ? 'text-white' : 'text-white/80'
+                onClick={() => handleTabChange('academics')}
+                className={`text-sm font-medium tracking-wider transition-colors duration-200 ${
+                  activeTab === 'academics' ? 'text-black' : 'text-gray-500 hover:text-black'
                 }`}
                 style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}
               >
-                Home
+                ACADEMICS
               </button>
               <button
                 onClick={() => handleTabChange('projects')}
-                className={`text-base font-normal tracking-wide transition-colors duration-200 hover:text-white ${
-                  activeTab === 'projects' ? 'text-white' : 'text-white/80'
+                className={`text-sm font-medium tracking-wider transition-colors duration-200 ${
+                  activeTab === 'projects' ? 'text-black' : 'text-gray-500 hover:text-black'
                 }`}
                 style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}
               >
-                Projects & Work
-              </button>
-              <button
-                onClick={() => handleTabChange('academics')}
-                className={`text-base font-normal tracking-wide transition-colors duration-200 hover:text-white ${
-                  activeTab === 'academics' ? 'text-white' : 'text-white/80'
-                }`}
-                style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}
-              >
-                Academics
+                ACTIVITIES
               </button>
               <button
                 onClick={() => handleTabChange('honours')}
-                className={`text-base font-normal tracking-wide transition-colors duration-200 hover:text-white ${
-                  activeTab === 'honours' ? 'text-white' : 'text-white/80'
+                className={`text-sm font-medium tracking-wider transition-colors duration-200 ${
+                  activeTab === 'honours' ? 'text-black' : 'text-gray-500 hover:text-black'
                 }`}
                 style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}
               >
-                Honours
+                AWARDS
+              </button>
+              <button
+                onClick={() => handleTabChange('home')}
+                className={`text-sm font-medium tracking-wider transition-colors duration-200 ${
+                  activeTab === 'home' ? 'text-red-500' : 'text-red-400 hover:text-red-500'
+                }`}
+                style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}
+              >
+                THE EVEREST
               </button>
             </div>
           </div>
@@ -306,136 +314,93 @@ function App() {
         )}
 
         {displayTab === 'projects' && (
-          <div>
-            <div className="bg-cover bg-center py-32 mb-0" style={{ backgroundColor: 'rgb(13, 39, 180)' }}>
-              <h2
+          <div className="bg-white min-h-screen py-20">
+            <div className="max-w-7xl mx-auto px-8">
+              <h1
                 data-index="0"
-                className={`text-5xl md:text-6xl font-normal text-white text-center transition-all duration-700 ${
+                className={`text-7xl md:text-8xl font-bold text-center mb-20 transition-all duration-700 ${
                   visibleElements.has(0) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
-                style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>The things I do for love</h2>
-              <p className="text-xl md:text-2xl text-white/90 text-center mt-4 italic" style={{ fontFamily: 'Georgia, serif' }}>Where ideas meet execution...and sometimes chaos</p>
-            </div>
+                style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                ACTIVITIES
+              </h1>
 
-            <div
-              data-index="1"
-              className={`py-20 transition-all duration-700 ${
-                visibleElements.has(1) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ backgroundColor: '#f3f3f3' }}>
-              <div className="max-w-4xl mx-auto px-8 text-center">
-                <h3 className="text-3xl md:text-4xl font-normal mb-6 italic" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>Everest Base Camp & Kala Patthar Peak</h3>
-                <p className="text-base leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                  Did a solo trek to the Everest Base Camp (17,589ft) & Kala Patthar Peak (18,514ft), alongside my guide, Ms. Poorna Malavath, who is also the youngest girl to ever climb Mount Everest and even has a biopic made on her.
-                </p>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+                <div
+                  data-index="1"
+                  className={`lg:col-span-2 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] bg-gradient-to-br from-gray-900 to-gray-800 p-10 transition-all duration-700 ${
+                    visibleElements.has(1) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}>
+                  <div className="inline-block px-4 py-1 bg-white rounded-full text-xs font-bold mb-6">
+                    PATENT PENDING
+                  </div>
+                  <h2 className="text-4xl font-bold text-white mb-6" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                    KeraX
+                  </h2>
+                  <p className="text-lg text-gray-300 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
+                    Created the world's first keratin-based carry bag. 100% biodegradable, eco-friendly, and 10x stronger than traditional plastic. Utilizing human hair waste to solve the single-use plastic crisis.
+                  </p>
+                </div>
+
+                <div
+                  data-index="2"
+                  className={`rounded-3xl bg-gradient-to-br from-orange-50 to-yellow-50 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] transition-all duration-700 ${
+                    visibleElements.has(2) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}>
+                  <div className="text-4xl mb-4">🎨</div>
+                  <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    ZeroCarb
+                  </h3>
+                  <p className="text-sm text-gray-700 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
+                    Developing a CO2 absorbing wall paint that absorbs 500x more CO2 than traditional paints, engineered to repel water/dust with a longer lifespan and application.
+                  </p>
+                  <div className="flex gap-2 mt-6">
+                    <span className="px-3 py-1 bg-white rounded-full text-xs font-semibold text-gray-700">Chemistry</span>
+                    <span className="px-3 py-1 bg-white rounded-full text-xs font-semibold text-gray-700">Climate Tech</span>
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <div
-              data-index="2"
-              className={`bg-white py-20 transition-all duration-700 ${
-                visibleElements.has(2) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}>
-              <div className="max-w-4xl mx-auto px-8 text-center">
-                <h3 className="text-3xl md:text-4xl font-normal mb-6 italic" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>KeraX</h3>
-                <p className="text-base leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                  Created the world's first keratin-based carry bag that is 100% biodegradable, eco-friendly, and 10x stronger than traditional plastic carry bags.
-                </p>
-              </div>
-            </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div
+                  data-index="3"
+                  className={`rounded-3xl bg-gradient-to-br from-yellow-50 to-orange-50 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] transition-all duration-700 ${
+                    visibleElements.has(3) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}>
+                  <div className="text-4xl mb-4">🤝</div>
+                  <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    Do Mutthi Ka Dum
+                  </h3>
+                  <p className="text-sm text-gray-700 leading-relaxed mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+                    Rose from volunteer to President of this 7-year-old social organization. We have raised over $40k and led to constructing 110+ toilets in rural areas to improve sanitation and hygiene.
+                  </p>
+                </div>
 
-            <div
-              data-index="3"
-              className={`py-20 transition-all duration-700 ${
-                visibleElements.has(3) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ backgroundColor: '#f3f3f3' }}>
-              <div className="max-w-4xl mx-auto px-8 text-center">
-                <h3 className="text-3xl md:text-4xl font-normal mb-6 italic" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>ZeroCarb</h3>
-                <p className="text-base leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                  Developing a CO2 absorbing wall paint that absorbs 500 times more CO2 than traditional wall paints while also repelling water/dust with a longer lifespan.
-                </p>
-              </div>
-            </div>
+                <div
+                  data-index="4"
+                  className={`rounded-3xl bg-gradient-to-br from-blue-50 to-indigo-50 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] transition-all duration-700 ${
+                    visibleElements.has(4) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}>
+                  <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    HDI Research Paper
+                  </h3>
+                  <p className="text-sm text-gray-700 leading-relaxed mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+                    Authored a paper on the 'Limitations of Human Development Index' under Shree Ram College of Commerce professor. Submitted for international publication.
+                  </p>
+                </div>
 
-            <div
-              data-index="4"
-              className={`bg-white py-20 transition-all duration-700 ${
-                visibleElements.has(4) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}>
-              <div className="max-w-4xl mx-auto px-8 text-center">
-                <h3 className="text-3xl md:text-4xl font-normal mb-6 italic" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>Do Mutthi Ka Dum - President</h3>
-                <p className="text-base leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                  Rose from volunteer to president of this 7-year old social organisation working towards the betterment of the society. We have raised over $40k. I have been part of projects such as the toilet construction project in rural areas where we constructed over 110 toilets.
-                </p>
-              </div>
-            </div>
-
-            <div
-              data-index="5"
-              className={`py-20 transition-all duration-700 ${
-                visibleElements.has(5) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ backgroundColor: '#f3f3f3' }}>
-              <div className="max-w-4xl mx-auto px-8 text-center">
-                <h3 className="text-3xl md:text-4xl font-normal mb-6 italic" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>Research Paper on Human Development Index</h3>
-                <p className="text-base leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                  Wrote a research paper on the Limitations of Human Development Index under the supervision of a Shree Ram College of Commerce professor. It has been submitted for publishing in an international journal.
-                </p>
-              </div>
-            </div>
-
-            <div
-              data-index="6"
-              className={`bg-white py-20 transition-all duration-700 ${
-                visibleElements.has(6) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}>
-              <div className="max-w-4xl mx-auto px-8 text-center">
-                <h3 className="text-3xl md:text-4xl font-normal mb-6 italic" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>School Captain</h3>
-                <p className="text-base leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                  Managed 5+ school events for 2400+ students, like the IB League, where I was the Finance head. I was in the organising team of the TEDxYouth @ JPIS, and my work involved handling budgets, sponsorships of $12k+, and the hospitality of speakers.
-                </p>
-              </div>
-            </div>
-
-            <div
-              data-index="7"
-              className={`py-20 transition-all duration-700 ${
-                visibleElements.has(7) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ backgroundColor: '#f3f3f3' }}>
-              <div className="max-w-4xl mx-auto px-8 text-center">
-                <h3 className="text-3xl md:text-4xl font-normal mb-6 italic" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>Finance Head of IB League</h3>
-                <p className="text-base leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                  Managed the sponsorships, budget, and costing of a national event, where the top 21 IB schools of India participated.
-                </p>
-              </div>
-            </div>
-
-            <div
-              data-index="8"
-              className={`bg-white py-20 transition-all duration-700 ${
-                visibleElements.has(8) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}>
-              <div className="max-w-4xl mx-auto px-8 text-center">
-                <h3 className="text-3xl md:text-4xl font-normal mb-6 italic" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>Math Tutor for Underprivileged Children</h3>
-                <p className="text-base leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                  Taught math to 50+ underprivileged kids over 2 summers. I created my own teaching plans, curriculum to do so, and also learnt how to use braille to teach them.
-                </p>
-              </div>
-            </div>
-
-            <div
-              data-index="9"
-              className={`py-20 transition-all duration-700 ${
-                visibleElements.has(9) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ backgroundColor: '#f3f3f3' }}>
-              <div className="max-w-4xl mx-auto px-8 text-center">
-                <h3 className="text-3xl md:text-4xl font-normal mb-6 italic" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>Internship at TallyPrime</h3>
-                <p className="text-base leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                  Did an internship at TallyPrime.
-                </p>
+                <div
+                  data-index="5"
+                  className={`rounded-3xl bg-gradient-to-br from-gray-50 to-slate-100 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] transition-all duration-700 ${
+                    visibleElements.has(5) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}>
+                  <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    School Captain & IB League
+                  </h3>
+                  <p className="text-sm text-gray-700 leading-relaxed mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+                    Managed 5+ school events for 2400+ students. Handled $12k+ in sponsorships. In organizing team of TEDxYouth@JPIS and Finance head of IB League.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -643,184 +608,75 @@ function App() {
         )}
 
         {displayTab === 'honours' && (
-          <div>
-            <div className="py-48 mb-0" style={{ backgroundColor: 'rgb(13, 39, 180)' }}>
-              <h2
+          <div className="bg-white min-h-screen py-20">
+            <div className="max-w-7xl mx-auto px-8">
+              <h1
                 data-index="0"
-                className={`text-6xl md:text-7xl font-normal text-white text-center transition-all duration-700 ${
+                className={`text-7xl md:text-8xl font-bold text-center mb-12 transition-all duration-700 ${
                   visibleElements.has(0) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}
-                style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>Honors</h2>
-              <p className="text-xl md:text-2xl text-white/90 text-center mt-4 italic" style={{ fontFamily: 'Georgia, serif' }}>My carefully curated collection of participation trophies (that actually required effort)</p>
-            </div>
-            <div className="bg-white py-20">
-              <div className="max-w-5xl mx-auto px-12">
-                <div className="space-y-6">
+                style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                HALL OF FAME
+              </h1>
+
+              <div className="flex justify-center gap-4 mb-16">
+                <button
+                  onClick={() => setAwardFilter('ALL')}
+                  className={`px-8 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-200 ${
+                    awardFilter === 'ALL' ? 'bg-black text-white' : 'bg-white border-2 border-gray-300 text-gray-700 hover:border-gray-400'
+                  }`}
+                  style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                  ALL
+                </button>
+                <button
+                  onClick={() => setAwardFilter('ACADEMIC')}
+                  className={`px-8 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-200 ${
+                    awardFilter === 'ACADEMIC' ? 'bg-yellow-400 text-black' : 'bg-white border-2 border-gray-300 text-gray-700 hover:border-gray-400'
+                  }`}
+                  style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                  ACADEMIC
+                </button>
+                <button
+                  onClick={() => setAwardFilter('INNOVATION')}
+                  className={`px-8 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-200 ${
+                    awardFilter === 'INNOVATION' ? 'bg-blue-400 text-white' : 'bg-white border-2 border-gray-300 text-gray-700 hover:border-gray-400'
+                  }`}
+                  style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                  INNOVATION
+                </button>
+                <button
+                  onClick={() => setAwardFilter('SPORT')}
+                  className={`px-8 py-3 rounded-full text-sm font-bold tracking-wide transition-all duration-200 ${
+                    awardFilter === 'SPORT' ? 'bg-red-400 text-white' : 'bg-white border-2 border-gray-300 text-gray-700 hover:border-gray-400'
+                  }`}
+                  style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                  SPORT
+                </button>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {(awardFilter === 'ALL' || awardFilter === 'ACADEMIC') && (
                   <div
                     data-index="1"
-                    className={`flex gap-4 transition-all duration-500 ${
+                    className={`rounded-3xl bg-gradient-to-br from-gray-50 to-gray-100 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] transition-all duration-700 ${
                       visibleElements.has(1) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                     }`}>
-                    <span className="font-normal flex-shrink-0" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>1.</span>
-                    <p className="leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                      <span className="font-semibold">S.T. Yau Science Award</span> - Finalist in Mathematics Category
+                    <div className="flex items-start justify-between mb-4">
+                      <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-bold tracking-wide">ACADEMIC</span>
+                      <div className="text-3xl">📚</div>
+                    </div>
+                    <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                      S.T. Yau Science Award Finalist
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+                      Finalist in Mathematics Category.
+                    </p>
+                    <p className="text-xs text-gray-400 uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                      UNITED STATES OF AMERICA
                     </p>
                   </div>
+                )}
 
-                  <div
-                    data-index="2"
-                    className={`flex gap-4 transition-all duration-500 ${
-                      visibleElements.has(2) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}>
-                    <span className="font-normal flex-shrink-0" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>2.</span>
-                    <p className="leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                      <span className="font-semibold">Beamline for Schools by CERN</span> - Top 50 teams globally
-                    </p>
-                  </div>
-
-                  <div
-                    data-index="3"
-                    className={`flex gap-4 transition-all duration-500 ${
-                      visibleElements.has(3) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}>
-                    <span className="font-normal flex-shrink-0" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>3.</span>
-                    <p className="leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                      <span className="font-semibold">Global Social Leaders Festival 2025</span> - Won the Climate & Sustainability in the senior track
-                    </p>
-                  </div>
-
-                  <div
-                    data-index="4"
-                    className={`flex gap-4 transition-all duration-500 ${
-                      visibleElements.has(4) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}>
-                    <span className="font-normal flex-shrink-0" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>4.</span>
-                    <p className="leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                      <span className="font-semibold">John Locke Global Essay Prize</span> - Finalist in Theology
-                    </p>
-                  </div>
-
-                  <div
-                    data-index="5"
-                    className={`flex gap-4 transition-all duration-500 ${
-                      visibleElements.has(5) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}>
-                    <span className="font-normal flex-shrink-0" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>5.</span>
-                    <p className="leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                      <span className="font-semibold">ISSO Nationals Basketball U14 & U17</span> - Champions
-                    </p>
-                  </div>
-
-                  <div
-                    data-index="6"
-                    className={`flex gap-4 transition-all duration-500 ${
-                      visibleElements.has(6) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}>
-                    <span className="font-normal flex-shrink-0" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>6.</span>
-                    <p className="leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                      <span className="font-semibold">ISSO Nationals Squash U17</span> - Runner up
-                    </p>
-                  </div>
-
-                  <div
-                    data-index="7"
-                    className={`flex gap-4 transition-all duration-500 ${
-                      visibleElements.has(7) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}>
-                    <span className="font-normal flex-shrink-0" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>7.</span>
-                    <p className="leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                      <span className="font-semibold">20th International UCMAS Abacus & Mental Arithmetic Competition 2015</span> - 3rd Runner Up globally at the age of 7 (competed against kids twice my age)
-                    </p>
-                  </div>
-
-                  <div
-                    data-index="8"
-                    className={`flex gap-4 transition-all duration-500 ${
-                      visibleElements.has(8) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}>
-                    <span className="font-normal flex-shrink-0" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>8.</span>
-                    <p className="leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                      <span className="font-semibold">100 Days of Running Challenge by HDOR</span> - Finished 14th internationally in teenagers category (Ran 464.21 km)
-                    </p>
-                  </div>
-
-                  <div
-                    data-index="9"
-                    className={`flex gap-4 transition-all duration-500 ${
-                      visibleElements.has(9) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}>
-                    <span className="font-normal flex-shrink-0" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>9.</span>
-                    <p className="leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                      <span className="font-semibold">Tuffman 10km Marathon</span> - Bronze medalist amongst thousands of athletes (first ever 10km marathon)
-                    </p>
-                  </div>
-
-                  <div
-                    data-index="10"
-                    className={`flex gap-4 transition-all duration-500 ${
-                      visibleElements.has(10) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}>
-                    <span className="font-normal flex-shrink-0" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>10.</span>
-                    <p className="leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                      <span className="font-semibold">World Mathematics Invitational</span> - Bronze medalist
-                    </p>
-                  </div>
-
-                  <div
-                    data-index="11"
-                    className={`flex gap-4 transition-all duration-500 ${
-                      visibleElements.has(11) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}>
-                    <span className="font-normal flex-shrink-0" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>11.</span>
-                    <p className="leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                      <span className="font-semibold">FISO Math National Olympiad</span> - Gold medalist
-                    </p>
-                  </div>
-
-                  <div
-                    data-index="12"
-                    className={`flex gap-4 transition-all duration-500 ${
-                      visibleElements.has(12) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}>
-                    <span className="font-normal flex-shrink-0" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>12.</span>
-                    <p className="leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                      <span className="font-semibold">FISO Math International Olympiad</span> - Silver medalist
-                    </p>
-                  </div>
-
-                  <div
-                    data-index="13"
-                    className={`flex gap-4 transition-all duration-500 ${
-                      visibleElements.has(13) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}>
-                    <span className="font-normal flex-shrink-0" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>13.</span>
-                    <p className="leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                      <span className="font-semibold">Singapore and Asian Mathematics Olympiad</span> - Bronze medalist
-                    </p>
-                  </div>
-
-                  <div
-                    data-index="14"
-                    className={`flex gap-4 transition-all duration-500 ${
-                      visibleElements.has(14) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}>
-                    <span className="font-normal flex-shrink-0" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>14.</span>
-                    <p className="leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                      <span className="font-semibold">Sparkle, IIT Guwahati 2025</span> - Top 6 out of 10,000+ participants
-                    </p>
-                  </div>
-
-                  <div
-                    data-index="15"
-                    className={`flex gap-4 transition-all duration-500 ${
-                      visibleElements.has(15) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}>
-                    <span className="font-normal flex-shrink-0" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>15.</span>
-                    <p className="leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                      <span className="font-semibold">International Business Olympiad</span> - Highest Distinction - Scored 282/300
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
