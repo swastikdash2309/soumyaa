@@ -2,8 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import { Instagram, Linkedin } from 'lucide-react';
 
 function App() {
-  const [activeTab, setActiveTab] = useState('home');
-  const [displayTab, setDisplayTab] = useState('home');
+  const [activeTab, setActiveTab] = useState('intro');
+  const [displayTab, setDisplayTab] = useState('intro');
   const [isFadingOut, setIsFadingOut] = useState(false);
   const [visibleElements, setVisibleElements] = useState<Set<number>>(new Set());
   const [awardFilter, setAwardFilter] = useState('ALL');
@@ -69,7 +69,7 @@ function App() {
         <nav className="max-w-7xl mx-auto px-8 py-5">
           <div className="flex items-center justify-between">
             <button
-              onClick={() => handleTabChange('home')}
+              onClick={() => handleTabChange('intro')}
               className="text-2xl font-bold"
               style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}
             >
@@ -104,9 +104,9 @@ function App() {
                 AWARDS
               </button>
               <button
-                onClick={() => handleTabChange('home')}
+                onClick={() => handleTabChange('everest')}
                 className={`text-sm font-medium tracking-wider transition-colors duration-200 ${
-                  activeTab === 'home' ? 'text-red-500' : 'text-red-400 hover:text-red-500'
+                  activeTab === 'everest' ? 'text-red-500' : 'text-red-400 hover:text-red-500'
                 }`}
                 style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}
               >
@@ -121,7 +121,26 @@ function App() {
         <div className={`transition-opacity duration-200 ease-in-out ${
           isFadingOut ? 'opacity-0' : 'opacity-100'
         }`}>
-        {displayTab === 'home' && (
+        {displayTab === 'intro' && (
+          <div className="bg-white min-h-screen">
+            <div className="max-w-6xl mx-auto px-8 py-20">
+              <div
+                data-index="0"
+                className={`text-center mb-20 transition-all duration-700 ${
+                  visibleElements.has(0) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}>
+                <h1 className="text-7xl md:text-9xl font-black mb-8" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                  SD.
+                </h1>
+                <p className="text-2xl md:text-3xl italic text-gray-600 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
+                  Welcome to my portfolio
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {displayTab === 'everest' && (
           <div className="bg-white">
             <section className="py-16 px-6">
               <div className="max-w-7xl mx-auto">
