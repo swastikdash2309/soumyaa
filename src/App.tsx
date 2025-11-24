@@ -4,37 +4,39 @@ import { Instagram, Linkedin } from 'lucide-react';
 const CountryIcon = ({ country, color }: { country: string; color: string }) => {
   const icons: { [key: string]: JSX.Element } = {
     'USA': (
-      <svg viewBox="0 0 100 100" className="w-16 h-16" style={{ opacity: 0.2 }}>
-        <path d="M30,20 L30,50 L40,45 L50,50 L60,45 L70,50 L70,20 Z M20,60 L80,60 L75,80 L25,80 Z" fill={color} />
+      <svg viewBox="0 0 120 80" className="w-20 h-14" style={{ opacity: 0.15 }}>
+        <path d="M10,30 L15,28 L20,25 L25,20 L30,18 L35,16 L40,15 L45,15 L50,16 L55,18 L60,20 L65,22 L70,25 L75,28 L80,32 L85,35 L88,38 L90,42 L92,46 L93,50 L92,54 L90,57 L87,60 L83,62 L78,64 L73,65 L68,64 L63,62 L58,60 L53,58 L48,56 L43,54 L38,52 L33,50 L28,47 L23,44 L18,40 L13,36 L10,32 Z M95,30 L98,32 L100,35 L102,38 L103,42 L102,45 L100,48 L98,50 L95,51 L92,50 L90,48 L88,45 L87,42 L88,38 L90,35 L92,32 L95,30 Z"
+              fill={color} />
       </svg>
     ),
     'SWITZERLAND': (
-      <svg viewBox="0 0 100 100" className="w-16 h-16" style={{ opacity: 0.2 }}>
-        <path d="M50,20 L60,40 L80,40 L65,55 L70,75 L50,60 L30,75 L35,55 L20,40 L40,40 Z" fill={color} />
+      <svg viewBox="0 0 60 50" className="w-14 h-12" style={{ opacity: 0.15 }}>
+        <path d="M15,20 L20,18 L25,17 L30,16 L35,17 L40,19 L43,22 L45,26 L46,30 L45,34 L42,37 L38,39 L33,40 L28,40 L23,38 L18,35 L15,31 L13,27 L13,23 L15,20 Z"
+              fill={color} />
       </svg>
     ),
     'UK': (
-      <svg viewBox="0 0 100 100" className="w-16 h-16" style={{ opacity: 0.2 }}>
-        <rect x="20" y="30" width="60" height="40" rx="5" fill={color} />
-        <path d="M30,35 L70,35 L70,65 L30,65 Z" fill={color} opacity="0.6" />
+      <svg viewBox="0 0 60 100" className="w-14 h-20" style={{ opacity: 0.15 }}>
+        <path d="M35,10 L38,12 L40,15 L42,20 L44,26 L45,33 L44,40 L42,46 L40,52 L38,58 L35,64 L32,70 L30,76 L28,82 L26,87 L23,90 L20,88 L18,84 L17,78 L16,72 L15,66 L14,60 L14,54 L15,48 L17,42 L19,36 L22,30 L25,24 L28,18 L31,13 L35,10 Z M40,22 L42,25 L43,29 L42,33 L40,36 L37,37 L35,35 L34,32 L35,28 L37,25 L40,22 Z"
+              fill={color} />
       </svg>
     ),
     'INDIA': (
-      <svg viewBox="0 0 100 100" className="w-16 h-16" style={{ opacity: 0.2 }}>
-        <path d="M50,15 L35,35 L15,35 L30,50 L25,70 L50,55 L75,70 L70,50 L85,35 L65,35 Z" fill={color} />
+      <svg viewBox="0 0 70 100" className="w-16 h-22" style={{ opacity: 0.15 }}>
+        <path d="M35,8 L38,10 L40,13 L42,17 L44,22 L46,28 L48,35 L50,42 L51,49 L52,56 L51,63 L49,70 L46,76 L43,81 L39,85 L35,88 L31,90 L27,91 L23,90 L20,88 L17,85 L14,81 L11,76 L9,70 L7,63 L6,56 L7,49 L9,42 L11,35 L14,28 L17,22 L20,17 L23,13 L27,10 L31,8 L35,8 Z M35,45 L30,48 L28,52 L30,56 L35,58 L40,56 L42,52 L40,48 L35,45 Z"
+              fill={color} />
       </svg>
     ),
     'SINGAPORE': (
-      <svg viewBox="0 0 100 100" className="w-16 h-16" style={{ opacity: 0.2 }}>
-        <circle cx="50" cy="50" r="25" fill={color} />
-        <path d="M50,30 L55,45 L70,45 L58,55 L62,70 L50,60 L38,70 L42,55 L30,45 L45,45 Z" fill={color} opacity="0.7" />
+      <svg viewBox="0 0 30 30" className="w-10 h-10" style={{ opacity: 0.15 }}>
+        <path d="M10,12 L12,10 L15,10 L18,12 L20,15 L20,18 L18,20 L15,20 L12,18 L10,15 Z"
+              fill={color} />
       </svg>
     ),
     'GLOBAL': (
-      <svg viewBox="0 0 100 100" className="w-16 h-16" style={{ opacity: 0.2 }}>
-        <circle cx="50" cy="50" r="30" fill="none" stroke={color} strokeWidth="4" />
-        <ellipse cx="50" cy="50" rx="30" ry="15" fill="none" stroke={color} strokeWidth="3" />
-        <line x1="50" y1="20" x2="50" y2="80" stroke={color} strokeWidth="3" />
+      <svg viewBox="0 0 100 100" className="w-16 h-16" style={{ opacity: 0.15 }}>
+        <path d="M20,30 L15,35 L12,42 L11,50 L12,58 L15,65 L20,70 L25,74 L32,77 L40,79 L50,80 L60,79 L68,77 L75,74 L80,70 L85,65 L88,58 L89,50 L88,42 L85,35 L80,30 L75,26 L68,23 L60,21 L50,20 L40,21 L32,23 L25,26 Z M30,50 L35,45 L40,42 L50,40 L60,42 L65,45 L70,50 L65,55 L60,58 L50,60 L40,58 L35,55 Z M50,25 L50,75 M25,38 L75,38 M25,62 L75,62"
+              fill={color} />
       </svg>
     ),
   };
