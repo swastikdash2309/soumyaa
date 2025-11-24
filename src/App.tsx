@@ -234,80 +234,196 @@ function App() {
           isFadingOut ? 'opacity-0' : 'opacity-100'
         }`}>
         {displayTab === 'home' && (
-          <div>
-            <section className="min-h-[60vh] flex items-center justify-center px-6 py-20" style={{ backgroundColor: 'rgb(13, 39, 180)' }}>
-              <div
-                data-index="0"
-                className={`text-center transition-all duration-700 ${
-                  visibleElements.has(0) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}>
-                <p className="text-xl md:text-2xl text-white/90 mb-4 tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>hello, I'm</p>
-                <h1 className="text-6xl md:text-8xl font-normal text-white tracking-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>Soumyaa</h1>
-              </div>
-            </section>
+          <div className="bg-white">
+            <section className="py-16 px-6">
+              <div className="max-w-7xl mx-auto">
+                <div
+                  data-index="0"
+                  className={`text-center mb-12 transition-all duration-700 ${
+                    visibleElements.has(0) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}>
+                  <h1 className="text-7xl md:text-8xl font-black mb-6 tracking-tight" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                    THE EVEREST
+                  </h1>
+                  <p className="text-lg italic text-gray-600 max-w-3xl mx-auto leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
+                    "I undertook a solo trek to Everest Base Camp (17,589ft) and Kala Patthar Peak (18,514ft). I was guided by Mr. Poorna Malavath, the youngest girl to ever climb Mt. Everest. This wasn't just a physical challenge; it was a lesson in sheer will."
+                  </p>
+                </div>
 
-            <section className="bg-white py-20">
-              <div className="max-w-6xl mx-auto px-6">
                 <div
                   data-index="1"
-                  className={`grid md:grid-cols-2 gap-16 items-center transition-all duration-700 ${
+                  className={`grid grid-cols-1 md:grid-cols-4 gap-4 mb-16 transition-all duration-700 ${
                     visibleElements.has(1) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}>
-                  <div>
-                    <h2 className="text-4xl font-normal mb-8 uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: 'rgb(13, 39, 180)' }}>WHO AM I?</h2>
-                    <div className="space-y-4 text-lg leading-relaxed" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                      <p>Hi, I'm Soumyaa from Jaipur, India.</p>
-                      <p>I'm in high school and spend most of my time learning about the stock market and testing out trading strategies — mostly short-term trades focused on momentum and patterns.</p>
-                      <p>When I'm not tracking charts, I'm on a basketball or squash court; I've been playing both for years and have played on the national level.</p>
-                      <p>I'm also a mountaineer, and I've done the Everest Base Camp trek. Currently, I'm cooking plans for another trek, next summer.</p>
+                  <div className="border-2 border-black rounded-lg p-8 text-center">
+                    <h3 className="text-4xl font-black mb-2" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>18,514 ft</h3>
+                    <p className="text-xs uppercase tracking-widest text-gray-600" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>PEAK ELEVATION</p>
+                  </div>
+                  <div className="border-2 border-black rounded-lg p-8 text-center">
+                    <h3 className="text-4xl font-black mb-2" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>-15°C</h3>
+                    <p className="text-xs uppercase tracking-widest text-gray-600" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>MIN TEMP</p>
+                  </div>
+                  <div className="border-2 border-black rounded-lg p-8 text-center">
+                    <h3 className="text-4xl font-black mb-2" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>SOLO</h3>
+                    <p className="text-xs uppercase tracking-widest text-gray-600" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>EXPEDITION TYPE</p>
+                  </div>
+                  <div className="border-2 border-black rounded-lg p-8 text-center">
+                    <h3 className="text-4xl font-black mb-2" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>130km</h3>
+                    <p className="text-xs uppercase tracking-widest text-gray-600" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>DISTANCE COVERED</p>
+                  </div>
+                </div>
+
+                <div
+                  data-index="2"
+                  className={`mb-16 transition-all duration-700 ${
+                    visibleElements.has(2) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}>
+                  <div className="flex items-center justify-between mb-6">
+                    <div>
+                      <h2 className="text-3xl font-black mb-1" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>THE EXPEDITION ROUTE</h2>
+                      <p className="text-sm text-gray-600" style={{ fontFamily: 'Georgia, serif' }}>Lukla → Everest Base Camp → Kala Patthar</p>
+                    </div>
+                    <div className="px-4 py-2 bg-black text-white text-xs uppercase tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                      LIVE TRACKING
                     </div>
                   </div>
-                  <div className="flex justify-center">
-                    <img
-                      src="/soumyaa.jpeg"
-                      alt="Soumyaa"
-                      className="w-full max-w-md h-auto object-cover shadow-2xl"
-                    />
+
+                  <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-xl p-12 h-[500px] overflow-hidden">
+                    <div className="absolute top-6 right-6 bg-slate-800/80 backdrop-blur-sm rounded-lg p-6 text-white border border-slate-700">
+                      <p className="text-xs uppercase tracking-widest text-gray-400 mb-1" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>ML PROJECT</p>
+                      <p className="text-xs uppercase tracking-widest text-gray-400 mb-3" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>CURRENT LOCATION</p>
+                      <h3 className="text-3xl font-black mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>Namche</h3>
+                      <div className="space-y-2 text-sm">
+                        <div>
+                          <p className="text-xs uppercase tracking-wider text-gray-400" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>ALTITUDE</p>
+                          <p className="text-lg font-bold">3195m</p>
+                        </div>
+                        <div>
+                          <p className="text-xs uppercase tracking-wider text-gray-400" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>NET GAIN</p>
+                          <p className="text-lg font-bold text-yellow-400">+335m</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 800 500">
+                      <defs>
+                        <linearGradient id="routeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stopColor="#fbbf24" />
+                          <stop offset="100%" stopColor="#f59e0b" />
+                        </linearGradient>
+                      </defs>
+
+                      <path
+                        d="M 100 420 Q 150 400, 180 380 T 250 340 T 320 300 T 400 260 T 480 220 T 560 200 T 640 210"
+                        stroke="#475569"
+                        strokeWidth="2"
+                        fill="none"
+                        strokeDasharray="5,5"
+                      />
+
+                      <path
+                        d="M 100 420 Q 150 400, 180 380"
+                        stroke="url(#routeGradient)"
+                        strokeWidth="4"
+                        fill="none"
+                        strokeLinecap="round"
+                      />
+
+                      <circle cx="100" cy="420" r="8" fill="#fbbf24" stroke="#1e293b" strokeWidth="3" />
+                      <circle cx="180" cy="380" r="6" fill="#475569" />
+                      <circle cx="250" cy="340" r="6" fill="#475569" />
+                      <circle cx="400" cy="260" r="6" fill="#475569" />
+                      <circle cx="560" cy="200" r="6" fill="#475569" />
+                      <circle cx="640" cy="210" r="6" fill="#475569" />
+
+                      <g transform="translate(400, 240)">
+                        <polygon points="0,-12 8,8 -8,8" fill="#94a3b8" />
+                        <text x="0" y="30" fill="#cbd5e1" fontSize="12" textAnchor="middle" fontFamily="Arial">Ama Dablam</text>
+                      </g>
+
+                      <g transform="translate(640, 150)">
+                        <polygon points="0,-20 12,12 -12,12" fill="#e2e8f0" />
+                      </g>
+                    </svg>
                   </div>
                 </div>
-              </div>
-            </section>
 
-            <section
-              data-index="2"
-              className={`py-20 transition-all duration-700 ${
-                visibleElements.has(2) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ backgroundColor: '#f3f3f3' }}>
-              <div className="max-w-4xl mx-auto px-6 text-center">
-                <h3 className="text-4xl font-normal mb-12 uppercase tracking-wide" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: 'rgb(13, 39, 180)' }}>CONNECT WITH ME</h3>
-                <div className="flex flex-wrap items-center justify-center gap-8 mb-8">
-                  <a href="https://www.instagram.com/soumyaad1808?igsh=MTYxenl4MDB6bHpzbg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="transition-colors" style={{ color: 'rgb(13, 39, 180)' }}>
-                    <Instagram className="w-8 h-8" />
-                  </a>
-                  <a href="https://www.linkedin.com/in/soumyaa-dhandharria/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" className="transition-colors" style={{ color: 'rgb(13, 39, 180)' }}>
-                    <Linkedin className="w-8 h-8" />
-                  </a>
-                </div>
-                <div className="space-y-2" style={{ fontFamily: 'Georgia, serif', color: '#262626' }}>
-                  <p className="text-lg">+91 8278689242</p>
-                  <p className="text-lg">soumyadhandharia2912@gmail.com</p>
-                </div>
-              </div>
-            </section>
+                <div
+                  data-index="3"
+                  className={`transition-all duration-700 ${
+                    visibleElements.has(3) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}>
+                  <div className="bg-gray-50 rounded-xl p-12 relative overflow-hidden">
+                    <div className="absolute top-8 right-12 text-9xl font-black text-gray-200 select-none" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                      PROFILE
+                    </div>
+                    <h2 className="text-3xl font-black mb-2 relative z-10" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>Elevation Profile</h2>
+                    <p className="text-sm text-gray-600 mb-8 relative z-10" style={{ fontFamily: 'Georgia, serif' }}>Guide<br />Ms. Poorna Malavath</p>
 
-            <section
-              data-index="3"
-              className={`py-20 transition-all duration-700 ${
-                visibleElements.has(3) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-              }`}
-              style={{ backgroundColor: 'rgb(13, 39, 180)' }}>
-              <div className="max-w-4xl mx-auto px-6 text-center">
-                <p className="text-6xl text-white mb-8">:)</p>
-                <p className="text-2xl md:text-3xl text-white leading-relaxed mb-8" style={{ fontFamily: 'Georgia, serif' }}>
-                  My defense mechanism is humor. When things get awkward, I just say something stupid and hope it lands.
-                </p>
-                <p className="text-xl text-white/90" style={{ fontFamily: 'Georgia, serif' }}>- Also me</p>
+                    <div className="relative h-80">
+                      <svg className="w-full h-full" viewBox="0 0 1000 300" preserveAspectRatio="none">
+                        <defs>
+                          <linearGradient id="elevationGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stopColor="#e5e7eb" stopOpacity="0.8" />
+                            <stop offset="100%" stopColor="#f3f4f6" stopOpacity="0.2" />
+                          </linearGradient>
+                        </defs>
+
+                        <path
+                          d="M 0 220 L 80 190 L 160 185 L 240 160 L 320 140 L 400 135 L 480 115 L 560 105 L 640 95 L 720 85 L 800 105 L 880 155 L 1000 200"
+                          fill="url(#elevationGradient)"
+                          stroke="none"
+                        />
+
+                        <path
+                          d="M 0 220 L 80 190 L 160 185 L 240 160 L 320 140 L 400 135 L 480 115 L 560 105 L 640 95 L 720 85 L 800 105 L 880 155 L 1000 200"
+                          fill="none"
+                          stroke="#1f2937"
+                          strokeWidth="2"
+                        />
+
+                        <circle cx="0" cy="220" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                        <circle cx="80" cy="190" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                        <circle cx="160" cy="185" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                        <circle cx="240" cy="160" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                        <circle cx="320" cy="140" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                        <circle cx="400" cy="135" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                        <circle cx="480" cy="115" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                        <circle cx="560" cy="105" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                        <circle cx="640" cy="95" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                        <circle cx="720" cy="85" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                        <circle cx="880" cy="155" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                        <circle cx="1000" cy="200" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                      </svg>
+
+                      <div className="absolute bottom-0 left-0 right-0 flex justify-between px-4 text-xs text-gray-600" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                        <span>Day 1</span>
+                        <span>Day 2</span>
+                        <span>Day 3</span>
+                        <span>Day 4</span>
+                        <span>Day 5</span>
+                        <span>Day 6</span>
+                        <span>Day 7</span>
+                        <span>Day 8</span>
+                        <span>Day 9</span>
+                        <span>Day 10</span>
+                        <span>Day 11</span>
+                        <span>Day 12</span>
+                      </div>
+
+                      <div className="absolute left-0 top-0 bottom-8 flex flex-col justify-between text-xs text-gray-600" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                        <span>6000m</span>
+                        <span>5500m</span>
+                        <span>5000m</span>
+                        <span>4500m</span>
+                        <span>4000m</span>
+                        <span>3500m</span>
+                        <span>3000m</span>
+                        <span>2500m</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
           </div>
