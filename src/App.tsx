@@ -353,15 +353,12 @@ function App() {
                   className={`transition-all duration-700 ${
                     visibleElements.has(3) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}>
-                  <div className="bg-gray-50 rounded-xl p-12 relative overflow-hidden">
-                    <div className="absolute top-8 right-12 text-9xl font-black text-gray-200 select-none" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
-                      PROFILE
-                    </div>
-                    <h2 className="text-3xl font-black mb-2 relative z-10" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>Elevation Profile</h2>
-                    <p className="text-sm text-gray-600 mb-8 relative z-10" style={{ fontFamily: 'Georgia, serif' }}>Guide<br />Ms. Poorna Malavath</p>
+                  <div className="bg-gray-50 rounded-xl p-8 md:p-12">
+                    <h2 className="text-3xl font-black mb-2" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>Elevation Profile</h2>
+                    <p className="text-sm text-gray-600 mb-12" style={{ fontFamily: 'Georgia, serif' }}>Guide<br />Ms. Poorna Malavath</p>
 
-                    <div className="relative h-96 pt-8">
-                      <div className="absolute left-0 top-8 bottom-12 w-12 flex flex-col justify-between text-xs text-gray-600" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                    <div className="relative" style={{ height: '400px' }}>
+                      <div className="absolute left-0 top-0 bottom-10 w-16 flex flex-col justify-between text-xs text-gray-500" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
                         <span>6000m</span>
                         <span>5500m</span>
                         <span>5000m</span>
@@ -372,43 +369,45 @@ function App() {
                         <span>2500m</span>
                       </div>
 
-                      <div className="ml-14 mr-4 h-full relative">
-                        <svg className="w-full h-[calc(100%-2rem)]" viewBox="0 0 1000 250" preserveAspectRatio="none">
+                      <div className="ml-20 h-full pb-10 relative">
+                        <svg className="w-full h-full" viewBox="0 0 1200 350" preserveAspectRatio="xMidYMid meet">
                           <defs>
                             <linearGradient id="elevationGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                              <stop offset="0%" stopColor="#e5e7eb" stopOpacity="0.8" />
-                              <stop offset="100%" stopColor="#f3f4f6" stopOpacity="0.2" />
+                              <stop offset="0%" stopColor="#d1d5db" stopOpacity="0.6" />
+                              <stop offset="100%" stopColor="#f9fafb" stopOpacity="0.1" />
                             </linearGradient>
                           </defs>
 
                           <path
-                            d="M 0 180 L 83 155 L 166 152 L 250 130 L 333 110 L 416 105 L 500 85 L 583 75 L 666 65 L 750 55 L 833 75 L 916 125 L 1000 165"
+                            d="M 20,250 L 120,210 L 220,205 L 320,170 L 420,145 L 520,137 L 620,110 L 720,95 L 820,80 L 920,70 L 1020,95 L 1120,165 L 1180,210"
                             fill="url(#elevationGradient)"
                             stroke="none"
                           />
 
                           <path
-                            d="M 0 180 L 83 155 L 166 152 L 250 130 L 333 110 L 416 105 L 500 85 L 583 75 L 666 65 L 750 55 L 833 75 L 916 125 L 1000 165"
+                            d="M 20,250 L 120,210 L 220,205 L 320,170 L 420,145 L 520,137 L 620,110 L 720,95 L 820,80 L 920,70 L 1020,95 L 1120,165 L 1180,210"
                             fill="none"
                             stroke="#1f2937"
-                            strokeWidth="2.5"
+                            strokeWidth="3"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                           />
 
-                          <circle cx="0" cy="180" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                          <circle cx="83" cy="155" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                          <circle cx="166" cy="152" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                          <circle cx="250" cy="130" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                          <circle cx="333" cy="110" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                          <circle cx="416" cy="105" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                          <circle cx="500" cy="85" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                          <circle cx="583" cy="75" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                          <circle cx="666" cy="65" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                          <circle cx="750" cy="55" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                          <circle cx="833" cy="75" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
-                          <circle cx="1000" cy="165" r="5" fill="white" stroke="#1f2937" strokeWidth="2" />
+                          <circle cx="20" cy="250" r="6" fill="white" stroke="#1f2937" strokeWidth="2.5" />
+                          <circle cx="120" cy="210" r="6" fill="white" stroke="#1f2937" strokeWidth="2.5" />
+                          <circle cx="220" cy="205" r="6" fill="white" stroke="#1f2937" strokeWidth="2.5" />
+                          <circle cx="320" cy="170" r="6" fill="white" stroke="#1f2937" strokeWidth="2.5" />
+                          <circle cx="420" cy="145" r="6" fill="white" stroke="#1f2937" strokeWidth="2.5" />
+                          <circle cx="520" cy="137" r="6" fill="white" stroke="#1f2937" strokeWidth="2.5" />
+                          <circle cx="620" cy="110" r="6" fill="white" stroke="#1f2937" strokeWidth="2.5" />
+                          <circle cx="720" cy="95" r="6" fill="white" stroke="#1f2937" strokeWidth="2.5" />
+                          <circle cx="820" cy="80" r="6" fill="white" stroke="#1f2937" strokeWidth="2.5" />
+                          <circle cx="920" cy="70" r="6" fill="white" stroke="#1f2937" strokeWidth="2.5" />
+                          <circle cx="1020" cy="95" r="6" fill="white" stroke="#1f2937" strokeWidth="2.5" />
+                          <circle cx="1180" cy="210" r="6" fill="white" stroke="#1f2937" strokeWidth="2.5" />
                         </svg>
 
-                        <div className="absolute bottom-0 left-0 right-0 flex justify-between text-xs text-gray-600" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
+                        <div className="absolute -bottom-2 left-0 right-0 flex justify-between text-xs text-gray-500 px-1" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
                           <span>Day 1</span>
                           <span>Day 2</span>
                           <span>Day 3</span>
