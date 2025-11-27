@@ -373,6 +373,43 @@ function App() {
                   </div>
                 </div>
 
+                <div
+                  data-index="3"
+                  className={`transition-all duration-700 ${
+                    visibleElements.has(3) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="h-[350px]">
+                      <img
+                        src="/WhatsApp Image 2025-11-24 at 22.24.21 (7).jpeg"
+                        alt="Everest expedition"
+                        className="w-full h-full object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                      />
+                    </div>
+                    <div className="h-[350px]">
+                      <img
+                        src="/WhatsApp Image 2025-11-24 at 22.24.21.jpeg"
+                        alt="Trekking journey"
+                        className="w-full h-full object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                      />
+                    </div>
+                    <div className="h-[350px]">
+                      <img
+                        src="/WhatsApp Image 2025-11-24 at 22.24.21 (6).jpeg"
+                        alt="Base camp"
+                        className="w-full h-full object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                      />
+                    </div>
+                    <div className="h-[350px]">
+                      <img
+                        src="/WhatsApp Image 2025-11-24 at 22.24.21 (2) copy.jpeg"
+                        alt="Mountain temple"
+                        className="w-full h-full object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                      />
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </section>
           </div>
