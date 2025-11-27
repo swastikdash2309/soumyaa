@@ -187,7 +187,7 @@ function App() {
                   visibleElements.has(2) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}>
                 <img
-                  src="/ballon.jpeg"
+                  src="/soumyaamo.jpeg"
                   alt="Soumya at Everest"
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
