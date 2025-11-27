@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Instagram, Linkedin } from 'lucide-react';
+import { MountainTrekAnimation } from './components/MountainTrekAnimation';
 
 function App() {
   const [activeTab, setActiveTab] = useState('intro');
@@ -306,71 +307,14 @@ function App() {
                   <div className="flex items-center justify-between mb-6">
                     <div>
                       <h2 className="text-3xl font-black mb-1" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>THE EXPEDITION ROUTE</h2>
-                      <p className="text-sm text-gray-600" style={{ fontFamily: 'Georgia, serif' }}>Lukla → Everest Base Camp → Kala Patthar</p>
+                      <p className="text-sm text-gray-600" style={{ fontFamily: 'Georgia, serif' }}>Phakding → Namche → Tengboche → Dingboche → Lobuche → Gorak Shep → EBC → Kala Patthar</p>
                     </div>
                     <div className="px-4 py-2 bg-black text-white text-xs uppercase tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
-                      LIVE TRACKING
+                      ANIMATED JOURNEY
                     </div>
                   </div>
 
-                  <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-xl p-12 h-[500px] overflow-hidden">
-                    <div className="absolute top-6 right-6 bg-slate-800/80 backdrop-blur-sm rounded-lg p-6 text-white border border-slate-700">
-                      <p className="text-xs uppercase tracking-widest text-gray-400 mb-1" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>ML PROJECT</p>
-                      <p className="text-xs uppercase tracking-widest text-gray-400 mb-3" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>CURRENT LOCATION</p>
-                      <h3 className="text-3xl font-black mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>Namche</h3>
-                      <div className="space-y-2 text-sm">
-                        <div>
-                          <p className="text-xs uppercase tracking-wider text-gray-400" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>ALTITUDE</p>
-                          <p className="text-lg font-bold">3195m</p>
-                        </div>
-                        <div>
-                          <p className="text-xs uppercase tracking-wider text-gray-400" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>NET GAIN</p>
-                          <p className="text-lg font-bold text-yellow-400">+335m</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 800 500">
-                      <defs>
-                        <linearGradient id="routeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stopColor="#fbbf24" />
-                          <stop offset="100%" stopColor="#f59e0b" />
-                        </linearGradient>
-                      </defs>
-
-                      <path
-                        d="M 100 420 Q 150 400, 180 380 T 250 340 T 320 300 T 400 260 T 480 220 T 560 200 T 640 210"
-                        stroke="#475569"
-                        strokeWidth="2"
-                        fill="none"
-                        strokeDasharray="5,5"
-                      />
-
-                      <path
-                        d="M 100 420 Q 150 400, 180 380"
-                        stroke="url(#routeGradient)"
-                        strokeWidth="4"
-                        fill="none"
-                        strokeLinecap="round"
-                      />
-
-                      <circle cx="100" cy="420" r="8" fill="#fbbf24" stroke="#1e293b" strokeWidth="3" />
-                      <circle cx="180" cy="380" r="6" fill="#475569" />
-                      <circle cx="250" cy="340" r="6" fill="#475569" />
-                      <circle cx="400" cy="260" r="6" fill="#475569" />
-                      <circle cx="560" cy="200" r="6" fill="#475569" />
-                      <circle cx="640" cy="210" r="6" fill="#475569" />
-
-                      <g transform="translate(400, 240)">
-                        <polygon points="0,-12 8,8 -8,8" fill="#94a3b8" />
-                        <text x="0" y="30" fill="#cbd5e1" fontSize="12" textAnchor="middle" fontFamily="Arial">Ama Dablam</text>
-                      </g>
-
-                      <g transform="translate(640, 150)">
-                        <polygon points="0,-20 12,12 -12,12" fill="#e2e8f0" />
-                      </g>
-                    </svg>
-                  </div>
+                  <MountainTrekAnimation />
                 </div>
 
                 <div
