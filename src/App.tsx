@@ -122,75 +122,129 @@ function App() {
           isFadingOut ? 'opacity-0' : 'opacity-100'
         }`}>
         {displayTab === 'intro' && (
-          <div className="bg-white min-h-screen flex items-center justify-center py-20">
-            <div className="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-start">
-              <div
-                data-index="0"
-                className={`transition-all duration-700 ${
-                  visibleElements.has(0) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                }`}>
-                <p className="text-xl md:text-2xl text-gray-500 mb-4" style={{ fontFamily: 'Georgia, serif' }}>
-                  hello, i'm
-                </p>
-                <h1 className="text-7xl md:text-8xl font-black mb-8" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
-                  soumyaa
-                </h1>
-                <div className="flex gap-6 mb-12">
-                  <a
-                    href="https://www.instagram.com/soumyaad1808/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-black transition-colors duration-200"
-                    aria-label="Instagram"
-                  >
-                    <Instagram size={28} strokeWidth={1.5} />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/soumyaa-dhandharria/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-black transition-colors duration-200"
-                    aria-label="LinkedIn"
-                  >
-                    <Linkedin size={28} strokeWidth={1.5} />
-                  </a>
+          <div className="bg-white min-h-screen py-20">
+            <div className="max-w-7xl mx-auto px-8">
+              <div className="grid md:grid-cols-2 gap-16 items-start mb-20">
+                <div
+                  data-index="0"
+                  className={`transition-all duration-700 ${
+                    visibleElements.has(0) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}>
+                  <p className="text-xl md:text-2xl text-gray-500 mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+                    hello, i'm
+                  </p>
+                  <h1 className="text-7xl md:text-8xl font-black mb-8" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    soumyaa
+                  </h1>
+                  <div className="flex gap-6 mb-12">
+                    <a
+                      href="https://www.instagram.com/soumyaad1808/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-700 hover:text-black transition-colors duration-200"
+                      aria-label="Instagram"
+                    >
+                      <Instagram size={28} strokeWidth={1.5} />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/soumyaa-dhandharria/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-700 hover:text-black transition-colors duration-200"
+                      aria-label="LinkedIn"
+                    >
+                      <Linkedin size={28} strokeWidth={1.5} />
+                    </a>
+                  </div>
+
+                  <div
+                    data-index="1"
+                    className={`transition-all duration-700 ${
+                      visibleElements.has(1) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                    }`}>
+                    <h2 className="text-4xl font-black mb-6" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                      WHO AM I?
+                    </h2>
+                    <div className="space-y-4 text-left" style={{ fontFamily: 'Georgia, serif', color: '#666' }}>
+                      <p className="text-base leading-relaxed">
+                        Hi, I'm Soumya from Jaipur, India.
+                      </p>
+                      <p className="text-base leading-relaxed">
+                        I'm in high school and spend most of my time learning about the stock market and testing out trading strategies — mostly short-term trades focused on momentum and patterns.
+                      </p>
+                      <p className="text-base leading-relaxed">
+                        When I'm not tracking charts, I'm on a basketball or squash court; I've been playing both for years and have played on the national level.
+                      </p>
+                      <p className="text-base leading-relaxed">
+                        I'm also a mountaineer, and I've done the Everest Base Camp trek. Currently, I'm cooking plans for another trek, next summer.
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
                 <div
-                  data-index="1"
+                  data-index="2"
                   className={`transition-all duration-700 ${
-                    visibleElements.has(1) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                    visibleElements.has(2) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}>
-                  <h2 className="text-4xl font-black mb-6" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
-                    WHO AM I?
-                  </h2>
-                  <div className="space-y-4 text-left" style={{ fontFamily: 'Georgia, serif', color: '#666' }}>
-                    <p className="text-base leading-relaxed">
-                      Hi, I'm Soumya from Jaipur, India.
-                    </p>
-                    <p className="text-base leading-relaxed">
-                      I'm in high school and spend most of my time learning about the stock market and testing out trading strategies — mostly short-term trades focused on momentum and patterns.
-                    </p>
-                    <p className="text-base leading-relaxed">
-                      When I'm not tracking charts, I'm on a basketball or squash court; I've been playing both for years and have played on the national level.
-                    </p>
-                    <p className="text-base leading-relaxed">
-                      I'm also a mountaineer, and I've done the Everest Base Camp trek. Currently, I'm cooking plans for another trek, next summer.
-                    </p>
-                  </div>
+                  <img
+                    src="/soumyaamo.jpeg"
+                    alt="Soumya at Everest"
+                    className="w-full h-auto rounded-lg shadow-lg"
+                  />
                 </div>
               </div>
 
               <div
-                data-index="2"
+                data-index="3"
                 className={`transition-all duration-700 ${
-                  visibleElements.has(2) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  visibleElements.has(3) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}>
-                <img
-                  src="/soumyaamo.jpeg"
-                  alt="Soumya at Everest"
-                  className="w-full h-auto rounded-lg shadow-lg"
-                />
+                <h2 className="text-5xl md:text-6xl font-black text-center mb-16" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                  MOMENTS
+                </h2>
+
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="col-span-2 row-span-2">
+                    <img
+                      src="/WhatsApp Image 2025-11-24 at 22.23.42.jpeg"
+                      alt="Speaking at event"
+                      className="w-full h-full object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    />
+                  </div>
+
+                  <div className="col-span-2">
+                    <img
+                      src="/WhatsApp Image 2025-11-24 at 22.24.20.jpeg"
+                      alt="Team photo with medals"
+                      className="w-full h-full object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    />
+                  </div>
+
+                  <div>
+                    <img
+                      src="/WhatsApp Image 2025-11-24 at 22.24.20 (1).jpeg"
+                      alt="Cambridge award ceremony"
+                      className="w-full h-full object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    />
+                  </div>
+
+                  <div>
+                    <img
+                      src="/WhatsApp Image 2025-11-24 at 22.24.20 (2).jpeg"
+                      alt="Basketball team celebration"
+                      className="w-full h-full object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    />
+                  </div>
+
+                  <div className="col-span-2">
+                    <img
+                      src="/WhatsApp Image 2025-11-24 at 22.24.21 (1).jpeg"
+                      alt="Mountain trekking"
+                      className="w-full h-full object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
