@@ -53,23 +53,19 @@ export function MountainTrekAnimation() {
 
     const createSmoothSnowTexture = () => {
       const canvas = document.createElement('canvas');
-      canvas.width = 512;
-      canvas.height = 512;
+      canvas.width = 256;
+      canvas.height = 256;
       const ctx = canvas.getContext('2d')!;
 
-      const gradient = ctx.createLinearGradient(0, 0, 512, 512);
-      gradient.addColorStop(0, '#ffffff');
-      gradient.addColorStop(0.5, '#f5f5f5');
-      gradient.addColorStop(1, '#e8e8e8');
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, 512, 512);
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, 256, 256);
 
-      for (let i = 0; i < 2000; i++) {
-        const x = Math.random() * 512;
-        const y = Math.random() * 512;
-        const radius = Math.random() * 2 + 0.5;
-        const brightness = 240 + Math.floor(Math.random() * 15);
-        ctx.fillStyle = `rgba(${brightness}, ${brightness}, ${brightness + 5}, 0.4)`;
+      for (let i = 0; i < 800; i++) {
+        const x = Math.random() * 256;
+        const y = Math.random() * 256;
+        const radius = Math.random() * 1.5;
+        const brightness = 245 + Math.floor(Math.random() * 10);
+        ctx.fillStyle = `rgba(${brightness}, ${brightness}, ${brightness + 3}, 0.3)`;
         ctx.beginPath();
         ctx.arc(x, y, radius, 0, Math.PI * 2);
         ctx.fill();
@@ -78,60 +74,66 @@ export function MountainTrekAnimation() {
       const texture = new THREE.CanvasTexture(canvas);
       texture.wrapS = THREE.RepeatWrapping;
       texture.wrapT = THREE.RepeatWrapping;
-      texture.repeat.set(4, 4);
-      texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+      texture.repeat.set(8, 8);
+      texture.minFilter = THREE.LinearMipMapLinearFilter;
+      texture.magFilter = THREE.LinearFilter;
+      texture.anisotropy = 16;
       return texture;
     };
 
     const createSmoothRockTexture = () => {
       const canvas = document.createElement('canvas');
-      canvas.width = 512;
-      canvas.height = 512;
+      canvas.width = 256;
+      canvas.height = 256;
       const ctx = canvas.getContext('2d')!;
 
-      ctx.fillStyle = '#6b6b6b';
-      ctx.fillRect(0, 0, 512, 512);
+      ctx.fillStyle = '#808080';
+      ctx.fillRect(0, 0, 256, 256);
 
-      for (let i = 0; i < 3000; i++) {
-        const x = Math.random() * 512;
-        const y = Math.random() * 512;
-        const size = Math.random() * 2 + 0.5;
-        const shade = Math.floor(Math.random() * 40) + 80;
-        ctx.fillStyle = `rgba(${shade}, ${shade - 5}, ${shade - 10}, 0.3)`;
+      for (let i = 0; i < 1000; i++) {
+        const x = Math.random() * 256;
+        const y = Math.random() * 256;
+        const size = Math.random() * 1.5;
+        const shade = Math.floor(Math.random() * 30) + 100;
+        ctx.fillStyle = `rgba(${shade}, ${shade - 5}, ${shade - 8}, 0.2)`;
         ctx.fillRect(x, y, size, size);
       }
 
       const texture = new THREE.CanvasTexture(canvas);
       texture.wrapS = THREE.RepeatWrapping;
       texture.wrapT = THREE.RepeatWrapping;
-      texture.repeat.set(3, 3);
-      texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+      texture.repeat.set(6, 6);
+      texture.minFilter = THREE.LinearMipMapLinearFilter;
+      texture.magFilter = THREE.LinearFilter;
+      texture.anisotropy = 16;
       return texture;
     };
 
     const createSmoothGrassTexture = () => {
       const canvas = document.createElement('canvas');
-      canvas.width = 512;
-      canvas.height = 512;
+      canvas.width = 256;
+      canvas.height = 256;
       const ctx = canvas.getContext('2d')!;
 
-      ctx.fillStyle = '#3a5a2a';
-      ctx.fillRect(0, 0, 512, 512);
+      ctx.fillStyle = '#3d5a2f';
+      ctx.fillRect(0, 0, 256, 256);
 
-      for (let i = 0; i < 4000; i++) {
-        const x = Math.random() * 512;
-        const y = Math.random() * 512;
-        const size = Math.random() * 2;
-        const green = Math.floor(Math.random() * 30) + 50;
-        ctx.fillStyle = `rgba(${green - 20}, ${green}, ${green - 25}, 0.25)`;
+      for (let i = 0; i < 1200; i++) {
+        const x = Math.random() * 256;
+        const y = Math.random() * 256;
+        const size = Math.random() * 1.5;
+        const green = Math.floor(Math.random() * 25) + 55;
+        ctx.fillStyle = `rgba(${green - 15}, ${green}, ${green - 20}, 0.2)`;
         ctx.fillRect(x, y, size, size);
       }
 
       const texture = new THREE.CanvasTexture(canvas);
       texture.wrapS = THREE.RepeatWrapping;
       texture.wrapT = THREE.RepeatWrapping;
-      texture.repeat.set(5, 5);
-      texture.anisotropy = renderer.capabilities.getMaxAnisotropy();
+      texture.repeat.set(10, 10);
+      texture.minFilter = THREE.LinearMipMapLinearFilter;
+      texture.magFilter = THREE.LinearFilter;
+      texture.anisotropy = 16;
       return texture;
     };
 
@@ -263,51 +265,72 @@ export function MountainTrekAnimation() {
       const normalizedX = (x + size / 2) / size;
       const normalizedZ = (z + size / 2) / size;
 
-      const segX = Math.floor(normalizedX * segments);
-      const segZ = Math.floor(normalizedZ * segments);
-
-      const clampedX = Math.max(0, Math.min(segments, segX));
-      const clampedZ = Math.max(0, Math.min(segments, segZ));
-
-      const index = (clampedZ * (segments + 1) + clampedX) * 3;
-
-      if (index >= 0 && index < vertices.length) {
-        return vertices[index + 2] + 0.6;
+      if (normalizedX < 0 || normalizedX > 1 || normalizedZ < 0 || normalizedZ > 1) {
+        return 0;
       }
 
-      return 0;
+      const gridX = normalizedX * segments;
+      const gridZ = normalizedZ * segments;
+
+      const x0 = Math.floor(gridX);
+      const z0 = Math.floor(gridZ);
+      const x1 = Math.min(x0 + 1, segments);
+      const z1 = Math.min(z0 + 1, segments);
+
+      const tx = gridX - x0;
+      const tz = gridZ - z0;
+
+      const getVertex = (ix: number, iz: number) => {
+        const index = (iz * (segments + 1) + ix) * 3;
+        if (index >= 0 && index < vertices.length) {
+          return vertices[index + 2];
+        }
+        return 0;
+      };
+
+      const h00 = getVertex(x0, z0);
+      const h10 = getVertex(x1, z0);
+      const h01 = getVertex(x0, z1);
+      const h11 = getVertex(x1, z1);
+
+      const h0 = h00 * (1 - tx) + h10 * tx;
+      const h1 = h01 * (1 - tx) + h11 * tx;
+      const height = h0 * (1 - tz) + h1 * tz;
+
+      return height + 0.5;
     };
 
     const createTrekPath = () => {
-      const numPoints = 60;
+      const numPoints = 80;
       const points: THREE.Vector3[] = [];
 
       for (let i = 0; i <= numPoints; i++) {
         const t = i / numPoints;
 
-        const angle = t * Math.PI * 1.3 - Math.PI * 0.65;
-        const radius = 75 - t * 55;
+        const angle = t * Math.PI * 1.35 - Math.PI * 0.675;
+        const radius = 78 - t * 58;
 
         const x = Math.cos(angle) * radius;
         const z = Math.sin(angle) * radius;
 
         const terrainHeight = getHeightAtPosition(x, z);
-        const y = terrainHeight + 0.7;
+        const y = terrainHeight + 0.55;
 
         points.push(new THREE.Vector3(x, y, z));
       }
 
-      const curve = new THREE.CatmullRomCurve3(points, false, 'catmullrom', 0.3);
-      const refinedPoints = curve.getPoints(500);
+      const curve = new THREE.CatmullRomCurve3(points, false, 'catmullrom', 0.4);
+      const refinedPoints = curve.getPoints(600);
 
-      refinedPoints.forEach(point => {
+      for (let i = 0; i < refinedPoints.length; i++) {
+        const point = refinedPoints[i];
         const terrainHeight = getHeightAtPosition(point.x, point.z);
-        point.y = Math.max(point.y, terrainHeight + 0.7);
-      });
+        point.y = terrainHeight + 0.55;
+      }
 
-      const finalCurve = new THREE.CatmullRomCurve3(refinedPoints, false, 'catmullrom', 0.15);
+      const finalCurve = new THREE.CatmullRomCurve3(refinedPoints, false, 'catmullrom', 0.2);
 
-      const pathGeometry = new THREE.TubeGeometry(finalCurve, 500, 0.22, 12, false);
+      const pathGeometry = new THREE.TubeGeometry(finalCurve, 600, 0.2, 12, false);
       const pathMaterial = new THREE.MeshStandardMaterial({
         color: 0xfbbf24,
         emissive: 0xf59e0b,
