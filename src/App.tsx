@@ -240,7 +240,31 @@ function App() {
                   <div className="col-span-2">
                     <img
                       src="/WhatsApp Image 2025-11-24 at 22.24.21 (1).jpeg"
-                      alt="Mountain trekking"
+                      alt="Mountain trekking - Namche"
+                      className="w-full h-full object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    />
+                  </div>
+
+                  <div className="row-span-2">
+                    <img
+                      src="/WhatsApp Image 2025-11-24 at 22.24.21 (3).jpeg"
+                      alt="Himalayan mountains"
+                      className="w-full h-full object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    />
+                  </div>
+
+                  <div>
+                    <img
+                      src="/WhatsApp Image 2025-11-24 at 22.24.21 (4).jpeg"
+                      alt="Mountain peak view"
+                      className="w-full h-full object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    />
+                  </div>
+
+                  <div>
+                    <img
+                      src="/WhatsApp Image 2025-11-24 at 22.24.21 (2).jpeg"
+                      alt="Trekking at monastery"
                       className="w-full h-full object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
                     />
                   </div>
