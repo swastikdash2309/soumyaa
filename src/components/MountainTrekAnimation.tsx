@@ -10,19 +10,18 @@ interface TrekPoint {
 
 const trekData: TrekPoint[] = [
   { name: 'Phakding', altitude: 2881, netGain: 21, position: [0, 0, 0] },
-  { name: 'Namche', altitude: 3324, netGain: 464, position: [20, 4.5, 15] },
-  { name: 'Tengboche', altitude: 3694, netGain: 834, position: [35, 8.5, 25] },
-  { name: 'Dingboche', altitude: 4156, netGain: 1296, position: [50, 13, 35] },
-  { name: 'Lobuche', altitude: 4725, netGain: 1865, position: [65, 19, 45] },
-  { name: 'Gorak Shep', altitude: 5058, netGain: 2198, position: [75, 22, 52] },
-  { name: 'EBC', altitude: 5281, netGain: 2421, position: [82, 24.5, 58] },
-  { name: 'Kala Patthar', altitude: 5515, netGain: 2655, position: [88, 27, 65] },
+  { name: 'Namche', altitude: 3324, netGain: 464, position: [0, 0, 0] },
+  { name: 'Tengboche', altitude: 3694, netGain: 834, position: [0, 0, 0] },
+  { name: 'Dingboche', altitude: 4156, netGain: 1296, position: [0, 0, 0] },
+  { name: 'Lobuche', altitude: 4725, netGain: 1865, position: [0, 0, 0] },
+  { name: 'Gorak Shep', altitude: 5058, netGain: 2198, position: [0, 0, 0] },
+  { name: 'EBC', altitude: 5281, netGain: 2421, position: [0, 0, 0] },
+  { name: 'Kala Patthar', altitude: 5515, netGain: 2655, position: [0, 0, 0] },
 ];
 
 export function MountainTrekAnimation() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentAltitude, setCurrentAltitude] = useState(2881);
-  const [currentPoint, setCurrentPoint] = useState(0);
   const [showWaypoints, setShowWaypoints] = useState(false);
 
   useEffect(() => {
@@ -30,13 +29,13 @@ export function MountainTrekAnimation() {
 
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x87ceeb);
-    scene.fog = new THREE.FogExp2(0xa0b8d0, 0.006);
+    scene.fog = new THREE.FogExp2(0xa0b8d0, 0.004);
 
     const camera = new THREE.PerspectiveCamera(
-      70,
+      75,
       containerRef.current.clientWidth / containerRef.current.clientHeight,
       0.1,
-      2000
+      3000
     );
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
@@ -45,23 +44,73 @@ export function MountainTrekAnimation() {
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.3;
+    renderer.toneMappingExposure = 1.4;
     containerRef.current.appendChild(renderer.domElement);
 
-    const textureLoader = new THREE.TextureLoader();
+    const createEnhancedSnowTexture = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = 1024;
+      canvas.height = 1024;
+      const ctx = canvas.getContext('2d')!;
+
+      ctx.fillStyle = '#f8f9fa';
+      ctx.fillRect(0, 0, 1024, 1024);
+
+      for (let i = 0; i < 8000; i++) {
+        const x = Math.random() * 1024;
+        const y = Math.random() * 1024;
+        const size = Math.random() * 3 + 1;
+        const brightness = Math.floor(Math.random() * 50) + 205;
+        ctx.fillStyle = `rgba(${brightness}, ${brightness}, ${brightness + 10}, ${0.3 + Math.random() * 0.7})`;
+        ctx.beginPath();
+        ctx.arc(x, y, size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      const texture = new THREE.CanvasTexture(canvas);
+      texture.wrapS = THREE.RepeatWrapping;
+      texture.wrapT = THREE.RepeatWrapping;
+      texture.repeat.set(6, 6);
+      return texture;
+    };
 
     const createRockTexture = () => {
       const canvas = document.createElement('canvas');
-      canvas.width = 512;
-      canvas.height = 512;
+      canvas.width = 1024;
+      canvas.height = 1024;
       const ctx = canvas.getContext('2d')!;
 
-      for (let i = 0; i < 5000; i++) {
-        const x = Math.random() * 512;
-        const y = Math.random() * 512;
-        const size = Math.random() * 3;
-        const shade = Math.floor(Math.random() * 60) + 60;
+      for (let i = 0; i < 12000; i++) {
+        const x = Math.random() * 1024;
+        const y = Math.random() * 1024;
+        const size = Math.random() * 4;
+        const shade = Math.floor(Math.random() * 80) + 50;
         ctx.fillStyle = `rgb(${shade}, ${shade - 10}, ${shade - 15})`;
+        ctx.fillRect(x, y, size, size);
+      }
+
+      const texture = new THREE.CanvasTexture(canvas);
+      texture.wrapS = THREE.RepeatWrapping;
+      texture.wrapT = THREE.RepeatWrapping;
+      texture.repeat.set(5, 5);
+      return texture;
+    };
+
+    const createGrassTexture = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = 1024;
+      canvas.height = 1024;
+      const ctx = canvas.getContext('2d')!;
+
+      ctx.fillStyle = '#2d5016';
+      ctx.fillRect(0, 0, 1024, 1024);
+
+      for (let i = 0; i < 10000; i++) {
+        const x = Math.random() * 1024;
+        const y = Math.random() * 1024;
+        const size = Math.random() * 3;
+        const green = Math.floor(Math.random() * 60) + 30;
+        ctx.fillStyle = `rgb(${green - 20}, ${green}, ${green - 30})`;
         ctx.fillRect(x, y, size, size);
       }
 
@@ -72,133 +121,66 @@ export function MountainTrekAnimation() {
       return texture;
     };
 
-    const createSnowTexture = () => {
-      const canvas = document.createElement('canvas');
-      canvas.width = 512;
-      canvas.height = 512;
-      const ctx = canvas.getContext('2d')!;
-
-      ctx.fillStyle = '#f0f4f8';
-      ctx.fillRect(0, 0, 512, 512);
-
-      for (let i = 0; i < 3000; i++) {
-        const x = Math.random() * 512;
-        const y = Math.random() * 512;
-        const size = Math.random() * 2;
-        const brightness = Math.floor(Math.random() * 40) + 215;
-        ctx.fillStyle = `rgb(${brightness}, ${brightness}, ${brightness + 5})`;
-        ctx.fillRect(x, y, size, size);
-      }
-
-      const texture = new THREE.CanvasTexture(canvas);
-      texture.wrapS = THREE.RepeatWrapping;
-      texture.wrapT = THREE.RepeatWrapping;
-      texture.repeat.set(10, 10);
-      return texture;
-    };
-
-    const createGrassTexture = () => {
-      const canvas = document.createElement('canvas');
-      canvas.width = 512;
-      canvas.height = 512;
-      const ctx = canvas.getContext('2d')!;
-
-      ctx.fillStyle = '#2d5016';
-      ctx.fillRect(0, 0, 512, 512);
-
-      for (let i = 0; i < 4000; i++) {
-        const x = Math.random() * 512;
-        const y = Math.random() * 512;
-        const size = Math.random() * 2;
-        const green = Math.floor(Math.random() * 40) + 40;
-        ctx.fillStyle = `rgb(${green - 20}, ${green}, ${green - 30})`;
-        ctx.fillRect(x, y, size, size);
-      }
-
-      const texture = new THREE.CanvasTexture(canvas);
-      texture.wrapS = THREE.RepeatWrapping;
-      texture.wrapT = THREE.RepeatWrapping;
-      texture.repeat.set(12, 12);
-      return texture;
-    };
-
+    const snowTexture = createEnhancedSnowTexture();
     const rockTexture = createRockTexture();
-    const snowTexture = createSnowTexture();
     const grassTexture = createGrassTexture();
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
     scene.add(ambientLight);
 
-    const sunLight = new THREE.DirectionalLight(0xfff5e6, 2);
-    sunLight.position.set(100, 150, 50);
+    const sunLight = new THREE.DirectionalLight(0xfff5e6, 2.5);
+    sunLight.position.set(200, 300, 100);
     sunLight.castShadow = true;
     sunLight.shadow.mapSize.width = 4096;
     sunLight.shadow.mapSize.height = 4096;
-    sunLight.shadow.camera.near = 0.5;
-    sunLight.shadow.camera.far = 1000;
-    sunLight.shadow.camera.left = -150;
-    sunLight.shadow.camera.right = 150;
-    sunLight.shadow.camera.top = 150;
-    sunLight.shadow.camera.bottom = -150;
+    sunLight.shadow.camera.near = 1;
+    sunLight.shadow.camera.far = 1500;
+    sunLight.shadow.camera.left = -300;
+    sunLight.shadow.camera.right = 300;
+    sunLight.shadow.camera.top = 300;
+    sunLight.shadow.camera.bottom = -300;
     sunLight.shadow.bias = -0.0001;
     scene.add(sunLight);
 
-    const hemisphereLight = new THREE.HemisphereLight(0x87ceeb, 0x4a5563, 0.6);
+    const hemisphereLight = new THREE.HemisphereLight(0x87ceeb, 0x4a5563, 0.7);
     scene.add(hemisphereLight);
 
-    const rimLight = new THREE.DirectionalLight(0xffa07a, 0.8);
-    rimLight.position.set(-50, 50, -50);
-    scene.add(rimLight);
+    const createMassiveMountain = () => {
+      const segments = 250;
+      const size = 400;
+      const geometry = new THREE.PlaneGeometry(size, size, segments, segments);
+      const vertices = geometry.attributes.position.array as Float32Array;
 
-    const createDetailedTerrain = () => {
-      const terrainGroup = new THREE.Group();
-      const segments = 200;
-      const size = 150;
+      for (let i = 0; i < vertices.length; i += 3) {
+        const x = vertices[i];
+        const y = vertices[i + 1];
 
-      const createTerrainLayer = (
-        heightMultiplier: number,
-        baseHeight: number,
-        material: THREE.Material,
-        steepness: number
-      ) => {
-        const geometry = new THREE.PlaneGeometry(size, size, segments, segments);
-        const vertices = geometry.attributes.position.array as Float32Array;
+        const distanceFromCenter = Math.sqrt(x * x + y * y);
+        const normalizedDistance = distanceFromCenter / (size / 2);
 
-        for (let i = 0; i < vertices.length; i += 3) {
-          const x = vertices[i];
-          const y = vertices[i + 1];
-          const distanceFromCenter = Math.sqrt(x * x + y * y);
+        let height = 0;
 
-          let elevation = baseHeight;
+        const mainPeakInfluence = Math.max(0, 1 - normalizedDistance * 0.8);
+        height += Math.pow(mainPeakInfluence, 1.5) * 120;
 
-          elevation += Math.pow(Math.abs(x) / size, steepness) * heightMultiplier * 15;
-          elevation += Math.pow(Math.abs(y) / size, steepness) * heightMultiplier * 12;
+        const ridgeX = Math.abs(Math.sin(x * 0.02)) * Math.exp(-normalizedDistance * 0.5) * 30;
+        const ridgeY = Math.abs(Math.cos(y * 0.025)) * Math.exp(-normalizedDistance * 0.5) * 25;
+        height += ridgeX + ridgeY;
 
-          elevation += Math.sin(x * 0.08) * heightMultiplier * 3;
-          elevation += Math.cos(y * 0.06) * heightMultiplier * 2.5;
-          elevation += Math.sin(x * 0.03 + y * 0.04) * heightMultiplier * 6;
+        height += Math.sin(x * 0.08) * Math.cos(y * 0.08) * Math.exp(-normalizedDistance * 0.8) * 12;
+        height += Math.sin(x * 0.15) * Math.cos(y * 0.12) * Math.exp(-normalizedDistance) * 6;
 
-          const noise1 = Math.sin(x * 0.2) * Math.cos(y * 0.2) * heightMultiplier * 2;
-          const noise2 = Math.sin(x * 0.5 + y * 0.3) * heightMultiplier * 1.5;
-          elevation += noise1 + noise2;
+        const noise = (Math.sin(x * 0.3) * Math.cos(y * 0.3) + Math.sin(x * 0.5) * Math.cos(y * 0.5)) * 3;
+        height += noise * Math.exp(-normalizedDistance * 0.5);
 
-          const ridgeFactor = Math.abs(Math.sin(x * 0.08)) * heightMultiplier * 8;
-          elevation += ridgeFactor;
+        vertices[i + 2] = Math.max(0, height);
+      }
 
-          vertices[i + 2] = elevation;
-        }
+      geometry.computeVertexNormals();
 
-        geometry.computeVertexNormals();
+      const mountainGroup = new THREE.Group();
 
-        const mesh = new THREE.Mesh(geometry, material);
-        mesh.rotation.x = -Math.PI / 2;
-        mesh.receiveShadow = true;
-        mesh.castShadow = true;
-
-        return mesh;
-      };
-
-      const forestMaterial = new THREE.MeshStandardMaterial({
+      const grassMaterial = new THREE.MeshStandardMaterial({
         map: grassTexture,
         roughness: 0.95,
         metalness: 0.0,
@@ -209,180 +191,214 @@ export function MountainTrekAnimation() {
         roughness: 0.9,
         metalness: 0.05,
         bumpMap: rockTexture,
-        bumpScale: 0.5,
+        bumpScale: 1.5,
       });
 
       const snowMaterial = new THREE.MeshStandardMaterial({
         map: snowTexture,
-        roughness: 0.4,
-        metalness: 0.2,
+        roughness: 0.3,
+        metalness: 0.25,
         bumpMap: snowTexture,
-        bumpScale: 0.3,
+        bumpScale: 0.8,
       });
 
-      const forestTerrain = createTerrainLayer(0.8, 0, forestMaterial, 1.2);
-      terrainGroup.add(forestTerrain);
+      const grassLayer = new THREE.Mesh(geometry.clone(), grassMaterial);
+      grassLayer.rotation.x = -Math.PI / 2;
+      grassLayer.receiveShadow = true;
+      grassLayer.castShadow = true;
+      mountainGroup.add(grassLayer);
 
-      const rockTerrain = createTerrainLayer(1.5, 8, rockMaterial, 1.5);
-      terrainGroup.add(rockTerrain);
-
-      const snowTerrain = createTerrainLayer(2.2, 20, snowMaterial, 1.8);
-      terrainGroup.add(snowTerrain);
-
-      for (let i = 0; i < 200; i++) {
-        const treeHeight = 2.5 + Math.random() * 2;
-        const treeGeometry = new THREE.ConeGeometry(0.4, treeHeight, 8);
-        const treeMaterial = new THREE.MeshStandardMaterial({
-          color: 0x1a4d0f,
-          roughness: 0.95,
-        });
-        const tree = new THREE.Mesh(treeGeometry, treeMaterial);
-
-        const angle = Math.random() * Math.PI * 2;
-        const distance = 10 + Math.random() * 40;
-        tree.position.set(
-          Math.cos(angle) * distance,
-          treeHeight / 2,
-          Math.sin(angle) * distance
-        );
-        tree.castShadow = true;
-        terrainGroup.add(tree);
+      const rockGeometry = geometry.clone();
+      const rockVertices = rockGeometry.attributes.position.array as Float32Array;
+      for (let i = 0; i < rockVertices.length; i += 3) {
+        rockVertices[i + 2] = Math.max(0, rockVertices[i + 2] - 10);
       }
+      rockGeometry.computeVertexNormals();
 
-      for (let i = 0; i < 120; i++) {
-        const rockGeometry = new THREE.DodecahedronGeometry(0.5 + Math.random() * 1.2, 1);
-        const rockMat = new THREE.MeshStandardMaterial({
-          color: 0x3a3330,
-          roughness: 0.95,
-          metalness: 0.05,
-        });
-        const rock = new THREE.Mesh(rockGeometry, rockMat);
+      const rockLayer = new THREE.Mesh(rockGeometry, rockMaterial);
+      rockLayer.rotation.x = -Math.PI / 2;
+      rockLayer.position.y = 10;
+      rockLayer.receiveShadow = true;
+      rockLayer.castShadow = true;
+      mountainGroup.add(rockLayer);
 
-        const angle = Math.random() * Math.PI * 2;
-        const distance = 15 + Math.random() * 60;
-        rock.position.set(
-          Math.cos(angle) * distance,
-          10 + Math.random() * 15,
-          Math.sin(angle) * distance
-        );
-        rock.rotation.set(
-          Math.random() * Math.PI,
-          Math.random() * Math.PI,
-          Math.random() * Math.PI
-        );
-        rock.castShadow = true;
-        terrainGroup.add(rock);
+      const snowGeometry = geometry.clone();
+      const snowVertices = snowGeometry.attributes.position.array as Float32Array;
+      for (let i = 0; i < snowVertices.length; i += 3) {
+        snowVertices[i + 2] = Math.max(0, snowVertices[i + 2] - 25);
       }
+      snowGeometry.computeVertexNormals();
 
-      return terrainGroup;
+      const snowLayer = new THREE.Mesh(snowGeometry, snowMaterial);
+      snowLayer.rotation.x = -Math.PI / 2;
+      snowLayer.position.y = 25;
+      snowLayer.receiveShadow = true;
+      snowLayer.castShadow = true;
+      mountainGroup.add(snowLayer);
+
+      return { mountainGroup, geometry: geometry.clone() };
     };
 
-    const terrain = createDetailedTerrain();
-    scene.add(terrain);
+    const { mountainGroup, geometry: mountainGeometry } = createMassiveMountain();
+    scene.add(mountainGroup);
 
-    const createMountainPeaks = () => {
-      const peaksGroup = new THREE.Group();
+    const getHeightAtPosition = (x: number, z: number): number => {
+      const size = 400;
+      const segments = 250;
+      const vertices = mountainGeometry.attributes.position.array as Float32Array;
 
-      for (let i = 0; i < 12; i++) {
-        const peakHeight = 40 + Math.random() * 35;
-        const peakGeometry = new THREE.ConeGeometry(10 + Math.random() * 8, peakHeight, 7);
-        const peakMaterial = new THREE.MeshStandardMaterial({
-          map: i % 2 === 0 ? snowTexture : rockTexture,
-          roughness: 0.85,
-          metalness: 0.1,
-        });
+      const normalizedX = (x + size / 2) / size;
+      const normalizedZ = (z + size / 2) / size;
 
-        const peak = new THREE.Mesh(peakGeometry, peakMaterial);
-        const angle = (i / 12) * Math.PI * 2;
-        const distance = 90 + Math.random() * 40;
+      const segX = Math.floor(normalizedX * segments);
+      const segZ = Math.floor(normalizedZ * segments);
 
-        peak.position.set(
-          Math.cos(angle) * distance,
-          peakHeight / 2 + 15,
-          Math.sin(angle) * distance
-        );
+      const clampedX = Math.max(0, Math.min(segments, segX));
+      const clampedZ = Math.max(0, Math.min(segments, segZ));
 
-        peak.rotation.y = Math.random() * Math.PI;
-        peak.castShadow = true;
-        peak.receiveShadow = true;
+      const index = (clampedZ * (segments + 1) + clampedX) * 3;
 
-        peaksGroup.add(peak);
+      if (index >= 0 && index < vertices.length) {
+        return vertices[index + 2] + 0.5;
       }
 
-      return peaksGroup;
+      return 0;
     };
-
-    const mountainPeaks = createMountainPeaks();
-    scene.add(mountainPeaks);
 
     const createTrekPath = () => {
-      const points = trekData.map(point => new THREE.Vector3(...point.position));
-      const curve = new THREE.CatmullRomCurve3(points, false, 'catmullrom', 0.3);
+      const numPoints = 50;
+      const points: THREE.Vector3[] = [];
 
-      const pathGeometry = new THREE.TubeGeometry(curve, 300, 0.2, 12, false);
+      for (let i = 0; i <= numPoints; i++) {
+        const t = i / numPoints;
+
+        const angle = t * Math.PI * 1.2 - Math.PI * 0.6;
+        const radius = 80 - t * 60;
+
+        const x = Math.cos(angle) * radius;
+        const z = Math.sin(angle) * radius;
+
+        const terrainHeight = getHeightAtPosition(x, z);
+        const y = terrainHeight + 0.8;
+
+        points.push(new THREE.Vector3(x, y, z));
+      }
+
+      const curve = new THREE.CatmullRomCurve3(points, false, 'catmullrom', 0.2);
+      const refinedPoints = curve.getPoints(400);
+
+      refinedPoints.forEach(point => {
+        const terrainHeight = getHeightAtPosition(point.x, point.z);
+        point.y = Math.max(point.y, terrainHeight + 0.8);
+      });
+
+      const finalCurve = new THREE.CatmullRomCurve3(refinedPoints, false, 'catmullrom', 0.1);
+
+      const pathGeometry = new THREE.TubeGeometry(finalCurve, 400, 0.25, 16, false);
       const pathMaterial = new THREE.MeshStandardMaterial({
         color: 0xfbbf24,
         emissive: 0xf59e0b,
-        emissiveIntensity: 1.2,
+        emissiveIntensity: 1.5,
         roughness: 0.2,
-        metalness: 0.7,
+        metalness: 0.8,
       });
 
       const pathMesh = new THREE.Mesh(pathGeometry, pathMaterial);
+      pathMesh.castShadow = true;
 
       const waypointMarkers: THREE.Mesh[] = [];
+      const waypointSpacing = Math.floor(refinedPoints.length / (trekData.length - 1));
+
       trekData.forEach((point, index) => {
-        const markerGeometry = new THREE.SphereGeometry(0.6, 16, 16);
+        const pointIndex = Math.min(index * waypointSpacing, refinedPoints.length - 1);
+        const pos = refinedPoints[pointIndex];
+        point.position = [pos.x, pos.y, pos.z];
+
+        const markerGeometry = new THREE.SphereGeometry(0.8, 20, 20);
         const markerMaterial = new THREE.MeshStandardMaterial({
           color: 0xff5722,
           emissive: 0xff5722,
-          emissiveIntensity: 0.8,
-          metalness: 0.5,
-          roughness: 0.3,
-        });
-        const marker = new THREE.Mesh(markerGeometry, markerMaterial);
-        marker.position.set(...point.position);
-        marker.castShadow = true;
-
-        const poleGeometry = new THREE.CylinderGeometry(0.08, 0.08, 3, 8);
-        const poleMaterial = new THREE.MeshStandardMaterial({
-          color: 0xffffff,
-          metalness: 0.8,
+          emissiveIntensity: 1.2,
+          metalness: 0.6,
           roughness: 0.2,
         });
+        const marker = new THREE.Mesh(markerGeometry, markerMaterial);
+        marker.position.set(pos.x, pos.y, pos.z);
+        marker.castShadow = true;
+
+        const poleGeometry = new THREE.CylinderGeometry(0.1, 0.1, 4, 12);
+        const poleMaterial = new THREE.MeshStandardMaterial({
+          color: 0xffffff,
+          metalness: 0.9,
+          roughness: 0.1,
+        });
         const pole = new THREE.Mesh(poleGeometry, poleMaterial);
-        pole.position.set(point.position[0], point.position[1] + 1.5, point.position[2]);
+        pole.position.set(pos.x, pos.y + 2, pos.z);
         pole.castShadow = true;
 
         waypointMarkers.push(marker, pole);
       });
 
-      return { pathMesh, curve, waypointMarkers };
+      return { pathMesh, curve: finalCurve, waypointMarkers };
     };
 
     const { pathMesh, curve, waypointMarkers } = createTrekPath();
     scene.add(pathMesh);
     waypointMarkers.forEach(marker => scene.add(marker));
 
+    const createSnowParticles = () => {
+      const particleCount = 5000;
+      const positions = new Float32Array(particleCount * 3);
+      const velocities = new Float32Array(particleCount * 3);
+
+      for (let i = 0; i < particleCount; i++) {
+        positions[i * 3] = (Math.random() - 0.5) * 400;
+        positions[i * 3 + 1] = Math.random() * 150 + 30;
+        positions[i * 3 + 2] = (Math.random() - 0.5) * 400;
+
+        velocities[i * 3] = (Math.random() - 0.5) * 0.5;
+        velocities[i * 3 + 1] = -Math.random() * 0.3 - 0.1;
+        velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.3;
+      }
+
+      const geometry = new THREE.BufferGeometry();
+      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+      const material = new THREE.PointsMaterial({
+        color: 0xffffff,
+        size: 0.4,
+        transparent: true,
+        opacity: 0.8,
+        blending: THREE.AdditiveBlending,
+      });
+
+      const particles = new THREE.Points(geometry, material);
+
+      return { particles, velocities };
+    };
+
+    const { particles: snowParticles, velocities: snowVelocities } = createSnowParticles();
+    scene.add(snowParticles);
+
     const createClouds = () => {
       const cloudsGroup = new THREE.Group();
 
-      for (let i = 0; i < 40; i++) {
-        const cloudGeometry = new THREE.SphereGeometry(4 + Math.random() * 5, 12, 12);
+      for (let i = 0; i < 50; i++) {
+        const cloudGeometry = new THREE.SphereGeometry(5 + Math.random() * 7, 16, 16);
         const cloudMaterial = new THREE.MeshStandardMaterial({
           color: 0xffffff,
           transparent: true,
-          opacity: 0.5,
+          opacity: 0.4 + Math.random() * 0.2,
           roughness: 1,
         });
 
         const cloud = new THREE.Mesh(cloudGeometry, cloudMaterial);
         cloud.position.set(
-          (Math.random() - 0.5) * 200,
-          20 + Math.random() * 30,
-          (Math.random() - 0.5) * 200
+          (Math.random() - 0.5) * 300,
+          40 + Math.random() * 60,
+          (Math.random() - 0.5) * 300
         );
-        cloud.scale.set(1.5 + Math.random(), 0.6 + Math.random() * 0.4, 1.5 + Math.random());
+        cloud.scale.set(2 + Math.random(), 0.8 + Math.random() * 0.4, 2 + Math.random());
 
         cloudsGroup.add(cloud);
       }
@@ -393,7 +409,29 @@ export function MountainTrekAnimation() {
     const clouds = createClouds();
     scene.add(clouds);
 
-    camera.position.set(0, 10, 20);
+    for (let i = 0; i < 300; i++) {
+      const treeHeight = 3 + Math.random() * 3;
+      const treeGeometry = new THREE.ConeGeometry(0.5, treeHeight, 8);
+      const treeMaterial = new THREE.MeshStandardMaterial({
+        color: 0x1a4d0f,
+        roughness: 0.95,
+      });
+      const tree = new THREE.Mesh(treeGeometry, treeMaterial);
+
+      const angle = Math.random() * Math.PI * 2;
+      const distance = 60 + Math.random() * 80;
+      const x = Math.cos(angle) * distance;
+      const z = Math.sin(angle) * distance;
+      const terrainHeight = getHeightAtPosition(x, z);
+
+      if (terrainHeight < 30) {
+        tree.position.set(x, terrainHeight + treeHeight / 2, z);
+        tree.castShadow = true;
+        scene.add(tree);
+      }
+    }
+
+    camera.position.set(0, 5, 30);
     camera.lookAt(0, 0, 0);
 
     let animationProgress = 0;
@@ -416,6 +454,20 @@ export function MountainTrekAnimation() {
       const deltaTime = 1 / 60;
       animationProgress += deltaTime;
 
+      const positions = snowParticles.geometry.attributes.position.array as Float32Array;
+      for (let i = 0; i < positions.length / 3; i++) {
+        positions[i * 3] += snowVelocities[i * 3] * 0.5;
+        positions[i * 3 + 1] += snowVelocities[i * 3 + 1];
+        positions[i * 3 + 2] += snowVelocities[i * 3 + 2] * 0.5;
+
+        if (positions[i * 3 + 1] < 0) {
+          positions[i * 3] = (Math.random() - 0.5) * 400;
+          positions[i * 3 + 1] = 150;
+          positions[i * 3 + 2] = (Math.random() - 0.5) * 400;
+        }
+      }
+      snowParticles.geometry.attributes.position.needsUpdate = true;
+
       if (animationProgress > animationDuration && !isShowingWaypoints) {
         isShowingWaypoints = true;
         waypointDisplayTime = 0;
@@ -425,22 +477,15 @@ export function MountainTrekAnimation() {
       if (isShowingWaypoints) {
         waypointDisplayTime += deltaTime;
 
-        const zoomProgress = Math.min(waypointDisplayTime / 1, 1);
+        const zoomProgress = Math.min(waypointDisplayTime / 1.5, 1);
         const easeProgress = 1 - Math.pow(1 - zoomProgress, 3);
 
         const startPos = curve.getPointAt(1);
-        const targetX = 44;
-        const targetY = 60;
-        const targetZ = 40;
+        camera.position.x = startPos.x + easeProgress * 0;
+        camera.position.y = startPos.y + 20 + easeProgress * 100;
+        camera.position.z = startPos.z + 30 + easeProgress * 20;
 
-        camera.position.x = startPos.x + (targetX - startPos.x) * easeProgress;
-        camera.position.y = startPos.y + 10 + (targetY - startPos.y - 10) * easeProgress;
-        camera.position.z = startPos.z + 10 + (targetZ - startPos.z - 10) * easeProgress;
-
-        const lookAtX = 44;
-        const lookAtY = 13.5;
-        const lookAtZ = 32;
-        camera.lookAt(lookAtX, lookAtY, lookAtZ);
+        camera.lookAt(0, 50, 0);
 
         if (waypointDisplayTime > 3) {
           animationProgress = 0;
@@ -454,28 +499,21 @@ export function MountainTrekAnimation() {
         const position = curve.getPointAt(t);
         const tangent = curve.getTangentAt(t);
 
-        const cameraHeight = 4 + Math.sin(t * Math.PI * 0.5) * 2;
-        const cameraDistance = 10 - t * 4;
-
-        const offsetX = -tangent.z * cameraDistance;
-        const offsetY = cameraHeight;
-        const offsetZ = tangent.x * cameraDistance;
+        const cameraDistance = 12 - t * 5;
+        const cameraHeight = 5 + t * 3;
 
         camera.position.set(
-          position.x + offsetX,
-          position.y + offsetY,
-          position.z + offsetZ
+          position.x - tangent.z * cameraDistance,
+          position.y + cameraHeight,
+          position.z + tangent.x * cameraDistance
         );
 
-        const lookAheadDistance = 8;
+        const lookAhead = 10;
         camera.lookAt(
-          position.x + tangent.x * lookAheadDistance,
-          position.y + 2,
-          position.z + tangent.z * lookAheadDistance
+          position.x + tangent.x * lookAhead,
+          position.y + 3,
+          position.z + tangent.z * lookAhead
         );
-
-        const currentPointIndex = Math.min(Math.floor(t * trekData.length), trekData.length - 1);
-        setCurrentPoint(currentPointIndex);
 
         const startAlt = trekData[0].altitude;
         const endAlt = trekData[trekData.length - 1].altitude;
@@ -484,30 +522,30 @@ export function MountainTrekAnimation() {
 
         const phaseProgress = t * 6;
         if (phaseProgress < 1) {
-          scene.fog = new THREE.FogExp2(0xa8d5f2, 0.008);
+          scene.fog = new THREE.FogExp2(0xa8d5f2, 0.006);
           scene.background = new THREE.Color(0x87ceeb);
         } else if (phaseProgress < 2) {
-          scene.fog = new THREE.FogExp2(0xa0b8d0, 0.01);
+          scene.fog = new THREE.FogExp2(0xa0b8d0, 0.008);
           scene.background = new THREE.Color(0x7ab8d9);
         } else if (phaseProgress < 3) {
-          scene.fog = new THREE.FogExp2(0x8fa3bc, 0.012);
+          scene.fog = new THREE.FogExp2(0x8fa3bc, 0.01);
           scene.background = new THREE.Color(0x6a9ec7);
         } else if (phaseProgress < 4) {
-          scene.fog = new THREE.FogExp2(0x7a8a9a, 0.014);
+          scene.fog = new THREE.FogExp2(0x7a8a9a, 0.012);
           scene.background = new THREE.Color(0x5a7a9a);
         } else if (phaseProgress < 5) {
-          scene.fog = new THREE.FogExp2(0xc8ddf0, 0.016);
+          scene.fog = new THREE.FogExp2(0xc8ddf0, 0.014);
           scene.background = new THREE.Color(0x4a7c9e);
         } else {
-          scene.fog = new THREE.FogExp2(0xffa07a, 0.006);
+          scene.fog = new THREE.FogExp2(0xffa07a, 0.005);
           scene.background = new THREE.Color(0xff8c42);
           sunLight.color.setHex(0xffb380);
         }
       }
 
-      clouds.rotation.y += 0.0002;
+      clouds.rotation.y += 0.0001;
       clouds.children.forEach((cloud, index) => {
-        cloud.position.x += Math.sin(animationProgress * 0.1 + index) * 0.008;
+        cloud.position.x += Math.sin(animationProgress * 0.1 + index) * 0.01;
       });
 
       renderer.render(scene, camera);
