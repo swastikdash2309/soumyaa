@@ -201,11 +201,11 @@ function App() {
                   visibleElements.has(3) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                 }`}>
                 <h2 className="text-5xl md:text-6xl font-black text-center mb-16" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
-                  MOMENTS
+                  GALLERY
                 </h2>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div className="col-span-2 row-span-2">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[280px]">
+                  <div className="md:col-span-2 md:row-span-2">
                     <img
                       src="/WhatsApp Image 2025-11-24 at 22.23.42.jpeg"
                       alt="Speaking at event"
@@ -213,7 +213,7 @@ function App() {
                     />
                   </div>
 
-                  <div className="col-span-2">
+                  <div className="md:col-span-2 md:row-span-1">
                     <img
                       src="/WhatsApp Image 2025-11-24 at 22.24.20.jpeg"
                       alt="Team photo with medals"
@@ -221,7 +221,7 @@ function App() {
                     />
                   </div>
 
-                  <div>
+                  <div className="md:col-span-1 md:row-span-1">
                     <img
                       src="/WhatsApp Image 2025-11-24 at 22.24.20 (1).jpeg"
                       alt="Cambridge award ceremony"
@@ -229,7 +229,7 @@ function App() {
                     />
                   </div>
 
-                  <div>
+                  <div className="md:col-span-1 md:row-span-1">
                     <img
                       src="/WhatsApp Image 2025-11-24 at 22.24.20 (2).jpeg"
                       alt="Basketball team celebration"
@@ -237,7 +237,7 @@ function App() {
                     />
                   </div>
 
-                  <div className="col-span-2">
+                  <div className="md:col-span-2 md:row-span-1">
                     <img
                       src="/WhatsApp Image 2025-11-24 at 22.24.21 (1).jpeg"
                       alt="Mountain trekking - Namche"
@@ -245,7 +245,7 @@ function App() {
                     />
                   </div>
 
-                  <div className="row-span-2">
+                  <div className="md:col-span-1 md:row-span-2">
                     <img
                       src="/WhatsApp Image 2025-11-24 at 22.24.21 (3).jpeg"
                       alt="Himalayan mountains"
@@ -253,7 +253,7 @@ function App() {
                     />
                   </div>
 
-                  <div>
+                  <div className="md:col-span-1 md:row-span-1">
                     <img
                       src="/WhatsApp Image 2025-11-24 at 22.24.21 (4).jpeg"
                       alt="Mountain peak view"
@@ -261,7 +261,7 @@ function App() {
                     />
                   </div>
 
-                  <div>
+                  <div className="md:col-span-1 md:row-span-1">
                     <img
                       src="/WhatsApp Image 2025-11-24 at 22.24.21 (2).jpeg"
                       alt="Trekking at monastery"
