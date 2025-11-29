@@ -208,8 +208,16 @@ function App() {
                   GALLERY
                 </h2>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <div className="md:col-span-2 md:row-span-2 h-[350px] md:h-[620px]">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                  <div className="md:col-span-2 md:row-span-2 h-[350px] md:h-[650px]">
+                    <img
+                      src="/WhatsApp Image 2025-11-27 at 21.27.28 copy.jpeg"
+                      alt="World Records achievement"
+                      className="w-full h-full object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+                    />
+                  </div>
+
+                  <div className="h-[320px]">
                     <img
                       src="/WhatsApp Image 2025-11-24 at 22.23.42.jpeg"
                       alt="Speaking at event"
@@ -217,7 +225,7 @@ function App() {
                     />
                   </div>
 
-                  <div className="h-[300px]">
+                  <div className="h-[320px]">
                     <img
                       src="/WhatsApp Image 2025-11-24 at 22.24.20.jpeg"
                       alt="Team photo with medals"
@@ -225,7 +233,7 @@ function App() {
                     />
                   </div>
 
-                  <div className="h-[300px]">
+                  <div className="h-[320px]">
                     <img
                       src="/WhatsApp Image 2025-11-24 at 22.24.20 (1).jpeg"
                       alt="Cambridge award ceremony"
@@ -233,7 +241,7 @@ function App() {
                     />
                   </div>
 
-                  <div className="h-[300px]">
+                  <div className="h-[320px]">
                     <img
                       src="/WhatsApp Image 2025-11-24 at 22.24.21 (1).jpeg"
                       alt="Mountain trekking - Namche"
@@ -241,7 +249,7 @@ function App() {
                     />
                   </div>
 
-                  <div className="h-[300px]">
+                  <div className="md:col-span-2 h-[350px]">
                     <img
                       src="/WhatsApp Image 2025-11-24 at 22.24.21 (3).jpeg"
                       alt="Himalayan mountains"
@@ -249,7 +257,7 @@ function App() {
                     />
                   </div>
 
-                  <div className="h-[300px]">
+                  <div className="md:col-span-2 h-[350px]">
                     <img
                       src="/WhatsApp Image 2025-11-24 at 22.24.21 (4).jpeg"
                       alt="Mountain peak view"
