@@ -123,21 +123,33 @@ function App() {
           isFadingOut ? 'opacity-0' : 'opacity-100'
         }`}>
         {displayTab === 'intro' && (
-          <div className="bg-white min-h-screen py-20">
-            <div className="max-w-7xl mx-auto px-8">
+          <div className="bg-white">
+            <div
+              data-index="0"
+              className={`min-h-screen flex items-center justify-center transition-all duration-700 ${
+                visibleElements.has(0) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              }`}>
+              <div className="text-center px-8">
+                <p className="text-2xl md:text-3xl text-gray-500 mb-6" style={{ fontFamily: 'Georgia, serif' }}>
+                  hello, i'm
+                </p>
+                <h1 className="text-8xl md:text-9xl font-black" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                  soumyaa
+                </h1>
+              </div>
+            </div>
+
+            <div className="max-w-7xl mx-auto px-8 py-32">
               <div className="grid md:grid-cols-2 gap-16 items-start mb-20">
                 <div
-                  data-index="0"
+                  data-index="1"
                   className={`transition-all duration-700 ${
-                    visibleElements.has(0) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                    visibleElements.has(1) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}>
-                  <p className="text-xl md:text-2xl text-gray-500 mb-4" style={{ fontFamily: 'Georgia, serif' }}>
-                    hello, i'm
-                  </p>
-                  <h1 className="text-7xl md:text-8xl font-black mb-8" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
-                    soumyaa
-                  </h1>
-                  <div className="flex gap-6 mb-12">
+                  <h2 className="text-4xl font-black mb-6" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    WHO AM I?
+                  </h2>
+                  <div className="flex gap-6 mb-8">
                     <a
                       href="https://www.instagram.com/soumyaad1808/"
                       target="_blank"
@@ -157,29 +169,19 @@ function App() {
                       <Linkedin size={28} strokeWidth={1.5} />
                     </a>
                   </div>
-
-                  <div
-                    data-index="1"
-                    className={`transition-all duration-700 ${
-                      visibleElements.has(1) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                    }`}>
-                    <h2 className="text-4xl font-black mb-6" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
-                      WHO AM I?
-                    </h2>
-                    <div className="space-y-4 text-left" style={{ fontFamily: 'Georgia, serif', color: '#666' }}>
-                      <p className="text-base leading-relaxed">
-                        Hi, I'm Soumya from Jaipur, India.
-                      </p>
-                      <p className="text-base leading-relaxed">
-                        I'm in high school and spend most of my time learning about the stock market and testing out trading strategies — mostly short-term trades focused on momentum and patterns.
-                      </p>
-                      <p className="text-base leading-relaxed">
-                        When I'm not tracking charts, I'm on a basketball or squash court; I've been playing both for years and have played on the national level.
-                      </p>
-                      <p className="text-base leading-relaxed">
-                        I'm also a mountaineer, and I've done the Everest Base Camp trek. Currently, I'm cooking plans for another trek, next summer.
-                      </p>
-                    </div>
+                  <div className="space-y-4 text-left" style={{ fontFamily: 'Georgia, serif', color: '#666' }}>
+                    <p className="text-base leading-relaxed">
+                      Hi, I'm Soumya from Jaipur, India.
+                    </p>
+                    <p className="text-base leading-relaxed">
+                      I'm in high school and spend most of my time learning about the stock market and testing out trading strategies — mostly short-term trades focused on momentum and patterns.
+                    </p>
+                    <p className="text-base leading-relaxed">
+                      When I'm not tracking charts, I'm on a basketball or squash court; I've been playing both for years and have played on the national level.
+                    </p>
+                    <p className="text-base leading-relaxed">
+                      I'm also a mountaineer, and I've done the Everest Base Camp trek. Currently, I'm cooking plans for another trek, next summer.
+                    </p>
                   </div>
                 </div>
 
