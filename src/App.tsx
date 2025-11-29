@@ -74,7 +74,8 @@ function App() {
               className="text-2xl font-bold"
               style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}
             >
-              SD.
+              SD
+              
             </button>
             <div className="flex gap-12">
               <button
