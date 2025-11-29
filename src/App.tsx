@@ -373,10 +373,10 @@ function App() {
                 ACTIVITIES
               </h1>
 
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                 <div
                   data-index="1"
-                  className={`lg:col-span-2 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] bg-gradient-to-br from-gray-900 to-gray-800 p-10 transition-all duration-700 ${
+                  className={`rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02] bg-gradient-to-br from-gray-900 to-gray-800 p-10 transition-all duration-700 ${
                     visibleElements.has(1) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}>
                   <div className="inline-block px-4 py-1 bg-white rounded-full text-xs font-bold mb-6">
@@ -392,104 +392,124 @@ function App() {
 
                 <div
                   data-index="2"
-                  className={`rounded-3xl bg-gradient-to-br from-orange-50 to-yellow-50 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] transition-all duration-700 ${
+                  className={`rounded-3xl bg-gradient-to-br from-orange-50 to-yellow-50 p-10 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] transition-all duration-700 ${
                     visibleElements.has(2) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}>
                   <div className="text-4xl mb-4">🎨</div>
-                  <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                  <h3 className="text-3xl font-bold mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                     ZeroCarb
                   </h3>
-                  <p className="text-sm text-gray-700 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
+                  <p className="text-base text-gray-700 leading-relaxed mb-6" style={{ fontFamily: 'Georgia, serif' }}>
                     Developing a CO2 absorbing wall paint that absorbs 500x more CO2 than traditional paints, engineered to repel water/dust with a longer lifespan and application.
                   </p>
-                  <div className="flex gap-2 mt-6">
+                  <div className="flex gap-2">
                     <span className="px-3 py-1 bg-white rounded-full text-xs font-semibold text-gray-700">Chemistry</span>
                     <span className="px-3 py-1 bg-white rounded-full text-xs font-semibold text-gray-700">Climate Tech</span>
                   </div>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                 <div
                   data-index="3"
-                  className={`rounded-3xl bg-gradient-to-br from-yellow-50 to-orange-50 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] transition-all duration-700 ${
+                  className={`rounded-3xl bg-gradient-to-br from-yellow-50 to-orange-50 p-10 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] transition-all duration-700 ${
                     visibleElements.has(3) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}>
                   <div className="text-4xl mb-4">🤝</div>
-                  <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                  <h3 className="text-3xl font-bold mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                     Do Mutthi Ka Dum
                   </h3>
-                  <p className="text-sm text-gray-700 leading-relaxed mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+                  <p className="text-base text-gray-700 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
                     Rose from volunteer to President of this 7-year-old social organization. We have raised over $40k and led to constructing 110+ toilets in rural areas to improve sanitation and hygiene.
                   </p>
                 </div>
 
                 <div
                   data-index="4"
-                  className={`rounded-3xl bg-gradient-to-br from-blue-50 to-indigo-50 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] transition-all duration-700 ${
+                  className={`rounded-3xl bg-gradient-to-br from-blue-50 to-cyan-50 p-10 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] transition-all duration-700 ${
                     visibleElements.has(4) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}>
-                  <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                  <div className="text-4xl mb-4">🚀</div>
+                  <h3 className="text-3xl font-bold mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                    TKS Fellow
+                  </h3>
+                  <p className="text-base text-gray-700 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
+                    Accepted into one of the world's most prestigious accelerators for teenagers. Part of the Velocity cohort, with the top 30-40 students at TKS.
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div
+                  data-index="5"
+                  className={`rounded-3xl bg-gradient-to-br from-emerald-50 to-teal-50 p-10 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] transition-all duration-700 ${
+                    visibleElements.has(5) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  }`}>
+                  <div className="text-4xl mb-4">📄</div>
+                  <h3 className="text-3xl font-bold mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                     HDI Research Paper
                   </h3>
-                  <p className="text-sm text-gray-700 leading-relaxed mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+                  <p className="text-base text-gray-700 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
                     Authored a paper on the 'Limitations of Human Development Index' under Shree Ram College of Commerce professor. Submitted for international publication.
                   </p>
                 </div>
 
                 <div
-                  data-index="5"
-                  className={`rounded-3xl bg-gradient-to-br from-gray-50 to-slate-100 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] transition-all duration-700 ${
-                    visibleElements.has(5) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  data-index="6"
+                  className={`rounded-3xl bg-gradient-to-br from-gray-50 to-slate-100 p-10 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] transition-all duration-700 ${
+                    visibleElements.has(6) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}>
-                  <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                  <div className="text-4xl mb-4">🎓</div>
+                  <h3 className="text-3xl font-bold mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                     School Captain & IB League
                   </h3>
-                  <p className="text-sm text-gray-700 leading-relaxed mb-4" style={{ fontFamily: 'Georgia, serif' }}>
+                  <p className="text-base text-gray-700 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
                     Managed 5+ school events for 2400+ students. Handled $12k+ in sponsorships. In organizing team of TEDxYouth@JPIS and Finance head of IB League.
                   </p>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                 <div
-                  data-index="6"
-                  className={`rounded-3xl bg-gradient-to-br from-emerald-50 to-teal-50 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] transition-all duration-700 ${
-                    visibleElements.has(6) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  data-index="7"
+                  className={`rounded-3xl bg-gradient-to-br from-rose-50 to-pink-50 p-10 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] transition-all duration-700 ${
+                    visibleElements.has(7) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}>
                   <div className="text-4xl mb-4">💼</div>
-                  <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                  <h3 className="text-3xl font-bold mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                     Finance Head of IB League
                   </h3>
-                  <p className="text-sm text-gray-700 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
+                  <p className="text-base text-gray-700 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
                     Managed the sponsorships, budget, and costing of a national event, where the top 21 IB schools of India participated.
                   </p>
                 </div>
 
                 <div
-                  data-index="7"
-                  className={`rounded-3xl bg-gradient-to-br from-rose-50 to-pink-50 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] transition-all duration-700 ${
-                    visibleElements.has(7) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  data-index="8"
+                  className={`rounded-3xl bg-gradient-to-br from-amber-50 to-orange-50 p-10 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] transition-all duration-700 ${
+                    visibleElements.has(8) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}>
                   <div className="text-4xl mb-4">📚</div>
-                  <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                  <h3 className="text-3xl font-bold mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                     Math Teaching Initiative
                   </h3>
-                  <p className="text-sm text-gray-700 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
+                  <p className="text-base text-gray-700 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
                     Taught math to 50+ underprivileged kids over 2 summers. Created custom teaching plans and curriculum, and learned braille to make math accessible for visually impaired students.
                   </p>
                 </div>
+              </div>
 
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div
-                  data-index="8"
-                  className={`rounded-3xl bg-gradient-to-br from-violet-50 to-purple-50 p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] transition-all duration-700 ${
-                    visibleElements.has(8) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                  data-index="9"
+                  className={`rounded-3xl bg-gradient-to-br from-violet-50 to-purple-50 p-10 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] transition-all duration-700 ${
+                    visibleElements.has(9) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}>
                   <div className="text-4xl mb-4">💻</div>
-                  <h3 className="text-2xl font-bold mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
+                  <h3 className="text-3xl font-bold mb-4" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif', color: '#000' }}>
                     TallyPrime Internship
                   </h3>
-                  <p className="text-sm text-gray-700 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
+                  <p className="text-base text-gray-700 leading-relaxed" style={{ fontFamily: 'Georgia, serif' }}>
                     Completed a comprehensive internship at TallyPrime, gaining hands-on experience in enterprise accounting software, financial data management, and business process automation.
                   </p>
                 </div>
