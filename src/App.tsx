@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import { Instagram, Linkedin } from 'lucide-react';
-import { MountainTrekAnimation } from './components/MountainTrekAnimation';
 
 function App() {
   const [activeTab, setActiveTab] = useState('intro');
@@ -315,17 +314,66 @@ function App() {
                   className={`mb-16 transition-all duration-700 ${
                     visibleElements.has(2) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}>
-                  <div className="flex items-center justify-between mb-6">
-                    <div>
-                      <h2 className="text-3xl font-black mb-1" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>THE EXPEDITION ROUTE</h2>
-                      <p className="text-sm text-gray-600" style={{ fontFamily: 'Georgia, serif' }}>Phakding → Namche → Tengboche → Dingboche → Lobuche → Gorak Shep → EBC → Kala Patthar</p>
-                    </div>
-                    <div className="px-4 py-2 bg-black text-white text-xs uppercase tracking-widest" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>
-                      ANIMATED JOURNEY
-                    </div>
+                  <div className="mb-6">
+                    <h2 className="text-3xl font-black mb-2" style={{ fontFamily: 'Franklin Gothic, Arial, sans-serif' }}>THE EXPEDITION ROUTE</h2>
+                    <p className="text-sm text-gray-600" style={{ fontFamily: 'Georgia, serif' }}>Phakding → Namche → Tengboche → Dingboche → Lobuche → Gorak Shep → EBC → Kala Patthar</p>
                   </div>
 
-                  <MountainTrekAnimation />
+                  <div className="bg-gradient-to-b from-sky-100 to-stone-100 rounded-xl p-12 border-2 border-black">
+                    <svg viewBox="0 0 1200 600" className="w-full h-auto" style={{ minHeight: '400px' }}>
+                      <defs>
+                        <linearGradient id="mountainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                          <stop offset="0%" style={{ stopColor: '#e5e7eb', stopOpacity: 1 }} />
+                          <stop offset="100%" style={{ stopColor: '#9ca3af', stopOpacity: 1 }} />
+                        </linearGradient>
+                      </defs>
+
+                      <polygon points="900,200 1100,450 700,450" fill="url(#mountainGrad)" stroke="#374151" strokeWidth="3"/>
+                      <polygon points="1000,150 1200,450 800,450" fill="url(#mountainGrad)" stroke="#374151" strokeWidth="3"/>
+                      <polygon points="300,300 500,500 100,500" fill="url(#mountainGrad)" stroke="#374151" strokeWidth="3"/>
+                      <polygon points="500,250 700,500 300,500" fill="url(#mountainGrad)" stroke="#374151" strokeWidth="3"/>
+
+                      <path d="M 50,520 Q 150,500 200,480 T 350,440 T 500,400 T 650,360 T 800,320 T 950,280 T 1100,240"
+                            stroke="#dc2626" strokeWidth="4" fill="none" strokeDasharray="8,4"/>
+
+                      <circle cx="50" cy="520" r="8" fill="#dc2626" stroke="#fff" strokeWidth="2"/>
+                      <text x="50" y="555" fontSize="14" fontWeight="bold" textAnchor="middle" fill="#1f2937">Phakding</text>
+                      <text x="50" y="572" fontSize="11" textAnchor="middle" fill="#6b7280">2,610m</text>
+
+                      <circle cx="200" cy="480" r="8" fill="#dc2626" stroke="#fff" strokeWidth="2"/>
+                      <text x="200" y="515" fontSize="14" fontWeight="bold" textAnchor="middle" fill="#1f2937">Namche</text>
+                      <text x="200" y="532" fontSize="11" textAnchor="middle" fill="#6b7280">3,440m</text>
+
+                      <circle cx="350" cy="440" r="8" fill="#dc2626" stroke="#fff" strokeWidth="2"/>
+                      <text x="350" y="475" fontSize="14" fontWeight="bold" textAnchor="middle" fill="#1f2937">Tengboche</text>
+                      <text x="350" y="492" fontSize="11" textAnchor="middle" fill="#6b7280">3,860m</text>
+
+                      <circle cx="500" cy="400" r="8" fill="#dc2626" stroke="#fff" strokeWidth="2"/>
+                      <text x="500" y="435" fontSize="14" fontWeight="bold" textAnchor="middle" fill="#1f2937">Dingboche</text>
+                      <text x="500" y="452" fontSize="11" textAnchor="middle" fill="#6b7280">4,410m</text>
+
+                      <circle cx="650" cy="360" r="8" fill="#dc2626" stroke="#fff" strokeWidth="2"/>
+                      <text x="650" y="395" fontSize="14" fontWeight="bold" textAnchor="middle" fill="#1f2937">Lobuche</text>
+                      <text x="650" y="412" fontSize="11" textAnchor="middle" fill="#6b7280">4,940m</text>
+
+                      <circle cx="800" cy="320" r="8" fill="#dc2626" stroke="#fff" strokeWidth="2"/>
+                      <text x="800" y="310" fontSize="14" fontWeight="bold" textAnchor="middle" fill="#1f2937">Gorak Shep</text>
+                      <text x="800" y="327" fontSize="11" textAnchor="middle" fill="#6b7280">5,164m</text>
+
+                      <circle cx="950" cy="280" r="10" fill="#fbbf24" stroke="#fff" strokeWidth="2"/>
+                      <text x="950" y="270" fontSize="14" fontWeight="bold" textAnchor="middle" fill="#1f2937">EBC</text>
+                      <text x="950" y="287" fontSize="11" textAnchor="middle" fill="#6b7280">5,364m</text>
+
+                      <circle cx="1100" cy="240" r="12" fill="#16a34a" stroke="#fff" strokeWidth="3"/>
+                      <text x="1100" y="225" fontSize="15" fontWeight="bold" textAnchor="middle" fill="#1f2937">Kala Patthar</text>
+                      <text x="1100" y="242" fontSize="12" textAnchor="middle" fill="#6b7280">5,644m</text>
+
+                      <rect x="20" y="40" width="180" height="80" rx="8" fill="#fff" stroke="#000" strokeWidth="2"/>
+                      <text x="110" y="65" fontSize="16" fontWeight="bold" textAnchor="middle" fill="#1f2937">TREK STATS</text>
+                      <text x="110" y="90" fontSize="13" textAnchor="middle" fill="#6b7280">Duration: 12 Days</text>
+                      <text x="110" y="110" fontSize="13" textAnchor="middle" fill="#6b7280">Total Gain: 3,034m</text>
+                    </svg>
+                  </div>
                 </div>
 
                 <div
